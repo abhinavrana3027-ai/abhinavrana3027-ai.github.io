@@ -4,677 +4,374 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abhinav Rana - Data Scientist & ML Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.birds.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         :root {
-            --color-primary: #2196F3;
-            --color-primary-dark: #1565C0;
-            --color-accent: #FF6B6B;
-            --color-text: #1a1a1a;
-            --color-text-light: #555;
-            --color-bg: #f8f9fa;
-            --color-card: #ffffff;
-            --color-border: #e0e0e0;
-            --color-success: #4CAF50;
-            --transition: all 0.3s ease;
+            --primary-blue: #2563eb;
+            --deep-blue: #1e40af;
+            --accent-coral: #f87171;
+            --soft-gray: #f8fafc;
+            --dark-gray: #1e293b;
+            --text-primary: #0f172a;
+            --text-secondary: #64748b;
         }
-
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            color: var(--color-text);
-            line-height: 1.6;
-            background-color: var(--color-bg);
+            font-family: 'Inter', sans-serif;
+            background: var(--soft-gray);
+            color: var(--text-primary);
         }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        }
-
-        .nav-brand {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--color-primary);
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--color-text);
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover {
-            color: var(--color-primary);
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-        }
-
-        /* Hero Section */
-        .hero {
-            margin-top: 70px;
-            padding: 4rem 2rem;
+        
+        .hero-bg {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-            min-height: 600px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .profile-image {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid white;
-            margin-bottom: 2rem;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-            animation: fadeInDown 0.8s ease;
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            animation: fadeInDown 0.8s ease 0.2s both;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-            animation: fadeInDown 0.8s ease 0.4s both;
-        }
-
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin: 2rem 0;
-            animation: fadeInDown 0.8s ease 0.6s both;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            animation: fadeInDown 0.8s ease 0.8s both;
-        }
-
-        .btn {
-            padding: 0.75rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-primary {
-            background: white;
-            color: #667eea;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-secondary {
-            border: 2px solid white;
-            color: white;
-            background: transparent;
-        }
-
-        .btn-secondary:hover {
-            background: white;
-            color: #667eea;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Section */
-        section {
-            padding: 5rem 2rem;
-        }
-
-        section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            text-align: center;
-            color: var(--color-text);
             position: relative;
-            padding-bottom: 1rem;
+            overflow: hidden;
         }
-
-        section h2::after {
+        
+        .hero-bg::before {
             content: '';
             position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
             bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            border-radius: 2px;
+            background: rgba(0, 0, 0, 0.1);
+            z-index: 1;
         }
-
-        /* About Section */
-        #about {
-            background: var(--color-card);
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
         }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
+        
+        .card-hover {
+            transition: all 0.3s ease;
         }
-
-        .about-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--color-primary);
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
-
-        .about-text p {
-            margin-bottom: 1rem;
-            color: var(--color-text-light);
-            line-height: 1.8;
+        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-coral));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-
-        .about-highlights {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin-top: 2rem;
+        
+        .project-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
-
-        .highlight {
-            padding: 1rem;
-            background: var(--color-bg);
-            border-left: 4px solid var(--color-primary);
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .skill-bar {
+            height: 8px;
+            background: #e2e8f0;
             border-radius: 4px;
+            overflow: hidden;
         }
-
-        .highlight strong {
-            color: var(--color-primary);
+        
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-coral));
+            border-radius: 4px;
+            transition: width 1s ease;
         }
-
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--primary-blue);
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 1.5rem;
+            width: 2px;
+            height: calc(100% - 1rem);
+            background: #e2e8f0;
+        }
+        
+        .timeline-item:last-child::after {
+            display: none;
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-blue);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .section-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .section-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .stats-counter {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+        }
+        
+        .project-filter {
+            transition: all 0.3s ease;
+        }
+        
+        .project-filter.active {
+            background: var(--primary-blue);
+            color: white;
+        }
+        
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
         @media (max-width: 768px) {
-            .about-content {
+            .project-grid {
                 grid-template-columns: 1fr;
             }
         }
-
-        /* Projects Section */
-        #projects {
-            background: var(--color-bg);
+        
+        .category-section {
+            margin-bottom: 3rem;
         }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: var(--color-card);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            transition: var(--transition);
-        }
-
-        .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .project-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem;
-            min-height: 100px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .project-header h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .project-body {
-            padding: 1.5rem;
-        }
-
-        .project-description {
-            color: var(--color-text-light);
+        
+        .category-title {
+            font-size: 1.5rem;
+            font-weight: 700;
             margin-bottom: 1rem;
-            font-size: 0.95rem;
-            line-height: 1.6;
+            color: var(--primary-blue);
         }
-
-        .project-impact {
-            background: #f0f4ff;
-            padding: 1rem;
-            border-radius: 6px;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-        }
-
-        .project-impact strong {
-            color: var(--color-primary);
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .tag {
-            display: inline-block;
-            background: #e3f2fd;
-            color: var(--color-primary);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        .project-link {
-            display: inline-block;
-            margin-top: 1rem;
-            color: var(--color-primary);
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .project-link:hover {
-            color: var(--color-primary-dark);
-            transform: translateX(5px);
-        }
-
-        /* Skills Section */
-        #skills {
-            background: var(--color-card);
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-category {
-            background: var(--color-bg);
-            padding: 2rem;
-            border-radius: 8px;
-            border-top: 4px solid var(--color-primary);
-        }
-
-        .skill-category h3 {
-            margin-bottom: 1rem;
-            color: var(--color-primary);
+        
+        .category-description {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
             font-size: 1.1rem;
         }
-
-        .skill-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.8rem;
-            font-size: 0.95rem;
-        }
-
-        .skill-name {
-            font-weight: 500;
-        }
-
-        .skill-level {
-            color: var(--color-text-light);
-        }
-
-        /* Experience Section */
-        #experience {
-            background: var(--color-bg);
-        }
-
-        .timeline {
-            position: relative;
-            padding: 2rem 0;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 3px;
-            height: 100%;
-            background: var(--color-border);
-        }
-
-        .timeline-item {
-            margin-bottom: 3rem;
-            position: relative;
-        }
-
-        .timeline-item:nth-child(odd) {
-            padding-right: 52%;
-            text-align: right;
-        }
-
-        .timeline-item:nth-child(even) {
-            padding-left: 52%;
-        }
-
-        .timeline-dot {
-            position: absolute;
-            left: 50%;
-            top: 0;
-            transform: translateX(-50%);
-            width: 16px;
-            height: 16px;
-            background: var(--color-primary);
-            border: 4px solid white;
-            border-radius: 50%;
-            box-shadow: 0 0 0 3px var(--color-primary);
-        }
-
-        .timeline-content {
-            background: var(--color-card);
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-        }
-
-        .timeline-content h3 {
-            margin-bottom: 0.5rem;
-            color: var(--color-primary);
-        }
-
-        .timeline-content .date {
-            font-size: 0.85rem;
-            color: var(--color-text-light);
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-content p {
-            color: var(--color-text-light);
-            font-size: 0.95rem;
-        }
-
-        @media (max-width: 768px) {
-            .timeline::before {
-                left: 20px;
-            }
-
-            .timeline-dot {
-                left: 20px;
-            }
-
-            .timeline-item:nth-child(odd),
-            .timeline-item:nth-child(even) {
-                padding-left: 60px;
-                padding-right: 0;
-                text-align: left;
-            }
-        }
-
-        /* Contact Section */
-        #contact {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-        }
-
-        #contact h2 {
-            color: white;
-        }
-
-        #contact h2::after {
-            background: rgba(255, 255, 255, 0.5);
-        }
-
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .contact-item {
-            padding: 1.5rem;
-        }
-
-        .contact-item a {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .contact-item a:hover {
-            opacity: 0.8;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .social-link {
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            color: white;
-            text-decoration: none;
-            font-size: 1.5rem;
-            transition: var(--transition);
-        }
-
-        .social-link:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-3px);
-        }
-
-        /* Footer */
-        footer {
-            background: #1a1a1a;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.9rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero-stats {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-            }
-
-            section {
-                padding: 3rem 1rem;
-            }
-
-            section h2 {
-                font-size: 2rem;
-            }
-        }
-
-        /* Scroll animations */
-        .fade-in {
-            opacity: 0;
-            animation: fadeIn 0.6s ease forwards;
-        }
-
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
-        }
     </style>
+<base target="_blank">
 </head>
 <body>
     <!-- Navigation -->
-    <nav>
-        <a href="#" class="nav-brand">AR</a>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <span class="text-2xl font-bold gradient-text">AR</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#about" class="nav-link text-gray-700 hover:text-blue-600 font-medium">About</a>
+                        <a href="#projects" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Projects</a>
+                        <a href="#skills" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Skills</a>
+                        <a href="#experience" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Experience</a>
+                        <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-blue-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-blue-600">About</a>
+                <a href="#projects" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Projects</a>
+                <a href="#skills" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Skills</a>
+                <a href="#experience" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Experience</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Contact</a>
+            </div>
+        </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/5098fe78-182e-49d3-ab3b-9d220eae64b7" alt="Abhinav Rana" class="profile-image">
-            <h1>Abhinav Rana</h1>
-            <p>Data Scientist &amp; Machine Learning Engineer | Analytics Expert | Berlin-Based</p>
-            <div class="hero-stats">
-                <div class="stat">
-                    <div class="stat-number">4+</div>
-                    <div class="stat-label">Years Experience</div>
+    <section class="hero-bg min-h-screen flex items-center pt-16">
+        <div class="hero-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-white">
+                    <div class="floating-element mb-6">
+                        <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/5098fe78-182e-49d3-ab3b-9d220eae64b7" 
+                             alt="Abhinav Rana" 
+                             class="w-48 h-48 rounded-full mx-auto lg:mx-0 border-4 border-white shadow-2xl object-cover">
+                    </div>
+                    <h1 class="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                        Hi, I'm <span class="text-yellow-300">Abhinav Rana</span>
+                    </h1>
+                    <p class="text-xl lg:text-2xl mb-8 text-gray-200 leading-relaxed">
+                        Data Scientist & Machine Learning Engineer transforming complex data into actionable business insights
+                    </p>
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium">
+                            📊 Marketing Analytics
+                        </span>
+                        <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium">
+                            🤖 Machine Learning
+                        </span>
+                        <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium">
+                            📈 Business Intelligence
+                        </span>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#projects" class="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors text-center">
+                            View My Work
+                        </a>
+                        <a href="#contact" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition-colors text-center">
+                            Get In Touch
+                        </a>
+                    </div>
                 </div>
-                <div class="stat">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-label">Projects Shipped</div>
+                
+                <div class="text-white">
+                    <div class="grid grid-cols-3 gap-6 mb-8">
+                        <div class="text-center">
+                            <div class="stats-counter" data-count="4">0</div>
+                            <div class="text-gray-300">Years Experience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="stats-counter" data-count="15">0</div>
+                            <div class="text-gray-300">Projects Shipped</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="stats-counter" data-count="50">0</div>
+                            <div class="text-gray-300">M+ Data Points</div>
+                        </div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
+                        <h3 class="text-xl font-semibold mb-4">🎯 Current Focus</h3>
+                        <ul class="space-y-2 text-gray-200">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-400 mr-2"></i>
+                                Fleet optimization & logistics analytics
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-400 mr-2"></i>
+                                Real-time performance dashboards
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-400 mr-2"></i>
+                                Predictive modeling & automation
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="stat">
-                    <div class="stat-number">50M+</div>
-                    <div class="stat-label">Data Points Analyzed</div>
-                </div>
-            </div>
-            <div class="cta-buttons">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Results-Driven Data Scientist</h3>
-                    <p>I transform complex data into actionable insights that drive business growth. With 4+ years of experience in marketing analytics, machine learning, and data science, I've helped companies optimize campaigns, predict customer behavior, and reduce operational costs.</p>
-                    <p>Based in Berlin, I hold an MSc in Data Science, AI &amp; Digital Business from GISMA and a BBA in Marketing Analytics from NMIMS. I&rsquo;m fluent in Python, SQL, and modern ML frameworks, and I speak German at B1 professional level.</p>
-                    <p>I thrive in fast-paced, data-driven environments where I can collaborate with cross-functional teams to solve real-world problems.</p>
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 section-reveal">
+                <h2 class="text-4xl font-bold mb-4 gradient-text">About Me</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Transforming complex data into actionable insights that drive business growth
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="section-reveal">
+                    <h3 class="text-2xl font-semibold mb-6 text-gray-800">Results-Driven Data Scientist</h3>
+                    <div class="space-y-4 text-gray-600 leading-relaxed">
+                        <p>
+                            With 4+ years of experience in marketing analytics, machine learning, and data science, 
+                            I've helped companies optimize campaigns, predict customer behavior, and reduce operational costs.
+                        </p>
+                        <p>
+                            Based in Berlin, I hold an MSc in Data Science, AI & Digital Business from GISMA and a BBA 
+                            in Marketing Analytics from NMIMS. I'm fluent in Python, SQL, and modern ML frameworks, 
+                            and I speak German at B1 professional level.
+                        </p>
+                        <p>
+                            I thrive in fast-paced, data-driven environments where I can collaborate with cross-functional 
+                            teams to solve real-world problems and deliver measurable business impact.
+                        </p>
+                    </div>
                 </div>
-                <div class="about-highlights">
-                    <div class="highlight">
-                        <strong>📊 Marketing Analytics</strong><br>
-                        Campaign optimization &amp; full-funnel analysis
-                    </div>
-                    <div class="highlight">
-                        <strong>🤖 Machine Learning</strong><br>
-                        Predictive modeling &amp; customer segmentation
-                    </div>
-                    <div class="highlight">
-                        <strong>📈 BI &amp; Dashboards</strong><br>
-                        Tableau, Power BI, Looker visualizations
-                    </div>
-                    <div class="highlight">
-                        <strong>🐍 Python &amp; SQL</strong><br>
-                        Data wrangling, ETL, statistical analysis
-                    </div>
-                    <div class="highlight">
-                        <strong>🎯 A/B Testing</strong><br>
-                        Experimentation design &amp; statistical rigor
-                    </div>
-                    <div class="highlight">
-                        <strong>🌍 Berlin-Based</strong><br>
-                        Available for immediate start in Germany
+                
+                <div class="section-reveal">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-blue-50 p-6 rounded-xl border-l-4 border-blue-500">
+                            <div class="text-2xl mb-2">📊</div>
+                            <h4 class="font-semibold text-gray-800 mb-1">Marketing Analytics</h4>
+                            <p class="text-sm text-gray-600">Campaign optimization & full-funnel analysis</p>
+                        </div>
+                        <div class="bg-green-50 p-6 rounded-xl border-l-4 border-green-500">
+                            <div class="text-2xl mb-2">🤖</div>
+                            <h4 class="font-semibold text-gray-800 mb-1">Machine Learning</h4>
+                            <p class="text-sm text-gray-600">Predictive modeling & customer segmentation</p>
+                        </div>
+                        <div class="bg-purple-50 p-6 rounded-xl border-l-4 border-purple-500">
+                            <div class="text-2xl mb-2">📈</div>
+                            <h4 class="font-semibold text-gray-800 mb-1">BI & Dashboards</h4>
+                            <p class="text-sm text-gray-600">Tableau, Power BI, Looker visualizations</p>
+                        </div>
+                        <div class="bg-orange-50 p-6 rounded-xl border-l-4 border-orange-500">
+                            <div class="text-2xl mb-2">🐍</div>
+                            <h4 class="font-semibold text-gray-800 mb-1">Python & SQL</h4>
+                            <p class="text-sm text-gray-600">Data wrangling, ETL, statistical analysis</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -682,748 +379,514 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <h2>Featured Projects</h2>
+    <section id="projects" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 section-reveal">
+                <h2 class="text-4xl font-bold mb-4 gradient-text">Featured Projects</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Enterprise-scale analytics and advanced machine learning solutions
+                </p>
+            </div>
             
-            <!-- Work Projects -->
-            <div class="project-category">
-                <h3 class="category-title">💼 Work Projects</h3>
-                <p class="category-description">Enterprise-scale analytics and optimization projects delivered at Epsilon, Ferrum, and Sonic GMBH</p>
-                <div class="projects-grid">
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>🎯 AutoZone PCIQ Campaign Analysis</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Owned full-funnel analytics for AutoZone's PCIQ module, conducting deep-dive cohort analysis to identify conversion bottlenecks and optimize user journey across web and mobile.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> 240% higher CTR on PCIQ module, 40% improvement in install-to-trial conversion, and identified 70% of user drop-off points for remediation.
-                        </div>
-                        <div class="project-tags">
-                            <span class="tag">Tableau</span>
-                            <span class="tag">SQL</span>
-                            <span class="tag">Cohort Analysis</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>🏨 JW Marriott Customer Segmentation</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Developed customer segmentation model for JW Marriott using behavioral and demographic clustering to create personalized marketing campaigns and loyalty strategies.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Identified 8 distinct customer personas, enabling targeted campaigns with 28% higher engagement and 22% revenue lift from high-value segments.
-                        </div>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Clustering</span>
-                            <span class="tag">Marketing Strategy</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>📱 Blinkist Meta Ads Optimization</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Integrated Meta Ads data with Appsflyer and Snowflake to build comprehensive attribution model, optimizing ad spend allocation across campaigns and audience segments.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Reduced customer acquisition cost by 25%, improved ROAS by 35%, and streamlined real-time reporting for weekly optimization cycles.
-                        </div>
-                        <div class="project-tags">
-                            <span class="tag">Meta Ads API</span>
-                            <span class="tag">Snowflake</span>
-                            <span class="tag">Attribution Modeling</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>☕ Dunkin Donuts Retention Analysis</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Built retention cohort analysis and churn prediction model for Dunkin Donuts loyalty program, identifying at-risk customers and recommending intervention strategies.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Achieved 32% improvement in 12-month retention, prevented churn of 15,000+ high-value customers, generating $2.3M incremental revenue.
-                        </div>
-                        <div class="project-tags">
-                            <span class="tag">Cohort Analysis</span>
-                            <span class="tag">Churn Prediction</span>
-                            <span class="tag">Looker</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>🛠️ Ace Hardware Go-to-Market Analysis</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Conducted comprehensive GTM strategy analysis for Ace Hardware, including competitive benchmarking, market sizing, and customer acquisition cost modeling across channels.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Developed data-backed GTM roadmap resulting in 18% market share growth and $5.2M in incremental campaign revenue in first year.
-                        </div>
-                        <div class="project-tags">
-                            <span class="tag">Market Analysis</span>
-                            <span class="tag">Competitive Intelligence</span>
-                            <span class="tag">Excel</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>🌍 Ferrum Southern India Market Entry</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Architected comprehensive Go-to-Market strategy for Ferrum's Southern Indian market expansion, including market sizing, gap analysis, competitor benchmarking, and pricing strategy.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Delivered data-driven GTM roadmap achieving 10% market share in 18 months, 30% higher conversion rate vs. benchmark, and $3.8M in first-year revenue.
-                        </div>
-                        <div class="project-tags">
-                            <span class="tag">GTM Strategy</span>
-                            <span class="tag">Market Sizing</span>
-                            <span class="tag">Pricing Analysis</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>📊 Sonic Driver Performance Intelligence</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Built real-time KPI dashboards and predictive models tracking driver performance metrics including stops per hour, fuel efficiency, delivery accuracy, and safety compliance.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Improved fleet utilization by 22%, reduced fuel costs by 10%, decreased safety incidents by 18%, and enabled data-driven driver coaching programs.
-                        </div>
-                        <div class="project-tags">
-                            <span class="tag">Power BI</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">Performance Analytics</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>🤖 Automated Reporting Automation Suite</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Developed Python-based automation suite for weekly and monthly performance reporting, eliminating manual data pulls and reducing reporting preparation time from 8 hours to 30 minutes.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Saved 300+ hours annually across team, improved data accuracy by 99.8%, and freed up time for strategic analysis and insights generation.
-                        </div>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">SQL</span>
-                            <span class="tag">Automation</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
-                </div>
+            <!-- Project Filters -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12 section-reveal">
+                <button class="project-filter active px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-medium" data-filter="all">
+                    All Projects
+                </button>
+                <button class="project-filter px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-medium" data-filter="work">
+                    Work Projects
+                </button>
+                <button class="project-filter px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-medium" data-filter="personal">
+                    Personal Projects
+                </button>
+                <button class="project-filter px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-medium" data-filter="academic">
+                    Academic Projects
+                </button>
             </div>
+            
+            <!-- Projects Grid -->
+            <div class="section-reveal">
+                <!-- Work Projects -->
+                <div class="category-section" data-category="work">
+                    <h3 class="category-title">💼 Work Projects</h3>
+                    <p class="category-description">Enterprise-scale analytics and optimization projects delivered at Epsilon, Ferrum, and Sonic GMBH</p>
+                    <div class="project-grid">
+                        
+                        <div class="project-card" data-category="work">
+                            <div class="bg-gradient-to-r from-blue-500 to-purple-600 p-6 text-white">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="text-xl font-bold">🎯 AutoZone PCIQ Campaign Analysis</h3>
+                                    <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Work</span>
+                                </div>
+                                <p class="text-blue-100 mb-4">Full-funnel analytics and cohort analysis for AutoZone's PCIQ module</p>
+                                <div class="bg-white/10 rounded-lg p-4">
+                                    <strong>Impact:</strong> 240% higher CTR, 40% improvement in conversion, identified 70% drop-off points
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Tableau</span>
+                                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">SQL</span>
+                                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Cohort Analysis</span>
+                                </div>
+                                <a href="https://github.com/abhinavrana3027-ai" class="text-blue-600 font-semibold hover:text-blue-800 transition-colors">
+                                    View Details →
+                                </a>
+                            </div>
+                        </div>
 
-            <!-- Personal Projects -->
-            <div class="project-category">
-                <h3 class="category-title">🚀 Personal Projects</h3>
-                <p class="category-description">Advanced machine learning and data science projects showcasing technical expertise</p>
-                <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>🎓 Advanced NLP Text Classification</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Built end-to-end natural language processing pipeline for multi-class text classification using BERT embeddings, transformer models, and deep learning architectures for sentiment analysis and document categorization.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Achieved 94% F1-score on test set, deployed model processing 100K+ texts daily, enabling automated content moderation and customer feedback categorization.
+                        <div class="project-card" data-category="work">
+                            <div class="bg-gradient-to-r from-green-500 to-teal-600 p-6 text-white">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="text-xl font-bold">🏨 JW Marriott Customer Segmentation</h3>
+                                    <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Work</span>
+                                </div>
+                                <p class="text-green-100 mb-4">Behavioral and demographic clustering for personalized marketing</p>
+                                <div class="bg-white/10 rounded-lg p-4">
+                                    <strong>Impact:</strong> 8 customer personas, 28% higher engagement, 22% revenue lift
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Python</span>
+                                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Clustering</span>
+                                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Marketing Strategy</span>
+                                </div>
+                                <a href="https://github.com/abhinavrana3027-ai" class="text-green-600 font-semibold hover:text-green-800 transition-colors">
+                                    View Details →
+                                </a>
+                            </div>
                         </div>
-                        <div class="project-tags">
-                            <span class="tag">NLP</span>
-                            <span class="tag">BERT</span>
-                            <span class="tag">Deep Learning</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>📊 Time Series Forecasting & Anomaly Detection</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Developed ARIMA, Prophet, and LSTM-based forecasting models for time series prediction with anomaly detection algorithms for identifying unusual patterns in business metrics and operational KPIs.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Achieved 91% forecast accuracy, detected operational anomalies 48 hours in advance, enabling proactive risk mitigation and prevented $500K+ in potential losses.
+                        <div class="project-card" data-category="work">
+                            <div class="bg-gradient-to-r from-purple-500 to-pink-600 p-6 text-white">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="text-xl font-bold">📱 Blinkist Meta Ads Optimization</h3>
+                                    <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Work</span>
+                                </div>
+                                <p class="text-purple-100 mb-4">Meta Ads attribution model with Appsflyer and Snowflake integration</p>
+                                <div class="bg-white/10 rounded-lg p-4">
+                                    <strong>Impact:</strong> 25% lower CAC, 35% improved ROAS, real-time reporting
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Meta Ads API</span>
+                                    <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Snowflake</span>
+                                    <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Attribution Modeling</span>
+                                </div>
+                                <a href="https://github.com/abhinavrana3027-ai" class="text-purple-600 font-semibold hover:text-purple-800 transition-colors">
+                                    View Details →
+                                </a>
+                            </div>
                         </div>
-                        <div class="project-tags">
-                            <span class="tag">ARIMA</span>
-                            <span class="tag">LSTM</span>
-                            <span class="tag">Prophet</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>🔗 Recommendation Engine & Collaborative Filtering</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Built collaborative filtering and content-based recommendation systems using matrix factorization, embedding techniques, and hybrid approaches to personalize product recommendations.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Increased click-through rate by 38%, improved conversion on recommended items by 44%, and generated 15% incremental revenue through personalization at scale.
+                        <div class="project-card" data-category="work">
+                            <div class="bg-gradient-to-r from-orange-500 to-red-600 p-6 text-white">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="text-xl font-bold">☕ Dunkin Donuts Retention Analysis</h3>
+                                    <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Work</span>
+                                </div>
+                                <p class="text-orange-100 mb-4">Churn prediction and retention cohort analysis for loyalty program</p>
+                                <div class="bg-white/10 rounded-lg p-4">
+                                    <strong>Impact:</strong> 32% retention improvement, $2.3M incremental revenue
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">Cohort Analysis</span>
+                                    <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">Churn Prediction</span>
+                                    <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">Looker</span>
+                                </div>
+                                <a href="https://github.com/abhinavrana3027-ai" class="text-orange-600 font-semibold hover:text-orange-800 transition-colors">
+                                    View Details →
+                                </a>
+                            </div>
                         </div>
-                        <div class="project-tags">
-                            <span class="tag">Collaborative Filtering</span>
-                            <span class="tag">Embeddings</span>
-                            <span class="tag">Recommendation Systems</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>🤖 Computer Vision Image Classification</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Implemented CNN architectures (ResNet, VGG, InceptionV3) with transfer learning for image classification, object detection, and visual quality assessment in real-world applications.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Built production model with 96% accuracy, processed 50K+ images daily, automated quality control reducing manual review time by 85% and improving consistency.
+                        <div class="project-card" data-category="work">
+                            <div class="bg-gradient-to-r from-indigo-500 to-blue-600 p-6 text-white">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="text-xl font-bold">🛠️ Ace Hardware Go-to-Market Analysis</h3>
+                                    <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Work</span>
+                                </div>
+                                <p class="text-indigo-100 mb-4">Comprehensive GTM strategy with competitive benchmarking</p>
+                                <div class="bg-white/10 rounded-lg p-4">
+                                    <strong>Impact:</strong> 18% market share growth, $5.2M incremental revenue
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Market Analysis</span>
+                                    <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Competitive Intelligence</span>
+                                    <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Excel</span>
+                                </div>
+                                <a href="https://github.com/abhinavrana3027-ai" class="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors">
+                                    View Details →
+                                </a>
+                            </div>
                         </div>
-                        <div class="project-tags">
-                            <span class="tag">Computer Vision</span>
-                            <span class="tag">ResNet</span>
-                            <span class="tag">Transfer Learning</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>📈 Causal Inference & Treatment Effect Analysis</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Applied causal inference methodologies including propensity score matching, instrumental variables, and causal forests to estimate treatment effects and measure true business impact beyond correlation.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Identified true causality in campaign effectiveness, corrected estimation errors by 35%, and improved budget allocation decisions resulting in 28% higher ROI on marketing spend.
+                        <div class="project-card" data-category="work">
+                            <div class="bg-gradient-to-r from-teal-500 to-green-600 p-6 text-white">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="text-xl font-bold">🌍 Ferrum Southern India Market Entry</h3>
+                                    <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Work</span>
+                                </div>
+                                <p class="text-teal-100 mb-4">Comprehensive GTM strategy for Southern Indian market expansion</p>
+                                <div class="bg-white/10 rounded-lg p-4">
+                                    <strong>Impact:</strong> 10% market share, $3.8M first-year revenue
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">GTM Strategy</span>
+                                    <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">Market Sizing</span>
+                                    <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">Pricing Analysis</span>
+                                </div>
+                                <a href="https://github.com/abhinavrana3027-ai" class="text-teal-600 font-semibold hover:text-teal-800 transition-colors">
+                                    View Details →
+                                </a>
+                            </div>
                         </div>
-                        <div class="project-tags">
-                            <span class="tag">Causal Inference</span>
-                            <span class="tag">Propensity Matching</span>
-                            <span class="tag">Statistical Modeling</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>🧠 Unsupervised Learning & Dimensionality Reduction</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Implemented PCA, t-SNE, UMAP, and clustering algorithms (K-means, DBSCAN, Hierarchical) for exploratory data analysis, feature reduction, and pattern discovery in high-dimensional datasets.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Reduced feature dimensionality by 75% while retaining 95% variance, discovered 12 hidden customer archetypes for targeted personalization, and improved model interpretability by 60%.
+                        <div class="project-card" data-category="work">
+                            <div class="bg-gradient-to-r from-cyan-500 to-blue-600 p-6 text-white">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="text-xl font-bold">📊 Sonic Driver Performance Intelligence</h3>
+                                    <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Work</span>
+                                </div>
+                                <p class="text-cyan-100 mb-4">Real-time KPI dashboards and predictive models for fleet performance</p>
+                                <div class="bg-white/10 rounded-lg p-4">
+                                    <strong>Impact:</strong> 22% fleet utilization, 10% fuel cost reduction, 18% fewer incidents
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-sm">Power BI</span>
+                                    <span class="bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-sm">Python</span>
+                                    <span class="bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-sm">Performance Analytics</span>
+                                </div>
+                                <a href="https://github.com/abhinavrana3027-ai" class="text-cyan-600 font-semibold hover:text-cyan-800 transition-colors">
+                                    View Details →
+                                </a>
+                            </div>
                         </div>
-                        <div class="project-tags">
-                            <span class="tag">PCA</span>
-                            <span class="tag">t-SNE</span>
-                            <span class="tag">Clustering</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
-                </div>
-            </div>
 
-            <!-- Master's Projects -->
-            <div class="project-category">
-                <h3 class="category-title">🎓 Master's Projects</h3>
-                <p class="category-description">Academic research and capstone projects from GISMA Master's in Data Science, AI & Digital Business</p>
-                <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>💰 Pricing Optimization ML Model</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Built a machine learning model to optimize dynamic pricing strategies using customer segmentation and price elasticity analysis.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Increased revenue by 18% through personalized pricing recommendations for high-value customer segments.
+                        <div class="project-card" data-category="work">
+                            <div class="bg-gradient-to-r from-pink-500 to-rose-600 p-6 text-white">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="text-xl font-bold">🤖 Automated Reporting Automation Suite</h3>
+                                    <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Work</span>
+                                </div>
+                                <p class="text-pink-100 mb-4">Python-based automation suite for weekly and monthly reporting</p>
+                                <div class="bg-white/10 rounded-lg p-4">
+                                    <strong>Impact:</strong> 300+ hours saved annually, 99.8% data accuracy improvement
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm">Python</span>
+                                    <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm">SQL</span>
+                                    <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm">Automation</span>
+                                </div>
+                                <a href="https://github.com/abhinavrana3027-ai" class="text-pink-600 font-semibold hover:text-pink-800 transition-colors">
+                                    View Details →
+                                </a>
+                            </div>
                         </div>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Scikit-learn</span>
-                            <span class="tag">Pricing Strategy</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>🚚 Fleet Logistics Optimization</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Developed route optimization algorithms and workload-balancing systems for logistics fleet management using clustering and optimization techniques.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Reduced operational costs by 10%, improved delivery efficiency, and decreased driver complaints by 50%.
-                        </div>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">SQL</span>
-                            <span class="tag">Optimization</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>📉 Customer Churn Prediction</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Created predictive models to identify at-risk customers and recommend personalization strategies to reduce churn and improve retention.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Achieved 85% prediction accuracy, enabling targeted retention campaigns with 30% higher effectiveness.
-                        </div>
-                        <div class="project-tags">
-                            <span class="tag">Machine Learning</span>
-                            <span class="tag">Classification</span>
-                            <span class="tag">Retention</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>📊 A/B Testing Framework</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Architected comprehensive A/B testing framework with statistical rigor, designed experimentation workflows for enterprise clients, and built visualization dashboards.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Enabled 240% higher CTR and 35% lift in conversion rates across campaigns through data-driven optimization.
-                        </div>
-                        <div class="project-tags">
-                            <span class="tag">Statistics</span>
-                            <span class="tag">Experimentation</span>
-                            <span class="tag">Analytics</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>🏢 Berlin Business Survival ML</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Applied survival analysis and predictive modeling to predict business longevity, identify risk factors, and forecast company success rates in Berlin market.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Built predictive model with 82% accuracy for identifying sustainable vs. at-risk businesses in German startup ecosystem.
-                        </div>
-                        <div class="project-tags">
-                            <span class="tag">Survival Analysis</span>
-                            <span class="tag">Forecasting</span>
-                            <span class="tag">Berlin Data</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>📈 Analytics Dashboard Suite</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Built interactive full-funnel analytics dashboards tracking user acquisition, engagement, retention, and monetization metrics across multiple platforms.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Provided real-time insights to 50+ stakeholders, reducing reporting time by 30% and improving decision velocity.
+                <!-- Personal Projects -->
+                <div class="category-section" data-category="personal">
+                    <h3 class="category-title">🚀 Personal Projects</h3>
+                    <p class="category-description">Advanced machine learning and data science projects showcasing technical expertise</p>
+                    <div class="project-grid">
+                        
+                        <div class="project-card" data-category="personal">
+                            <div class="bg-gradient-to-r from-purple-500 to-pink-600 p-6 text-white">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="text-xl font-bold">🎓 Advanced NLP Text Classification</h3>
+                                    <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Personal</span>
+                                </div>
+                                <p class="text-purple-100 mb-4">BERT-based NLP pipeline for multi-class text classification</p>
+                                <div class="bg-white/10 rounded-lg p-4">
+                                    <strong>Impact:</strong> 94% F1-score, processing 100K+ texts daily for automated moderation
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">NLP</span>
+                                    <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">BERT</span>
+                                    <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Deep Learning</span>
+                                </div>
+                                <a href="https://github.com/abhinavrana3027-ai" class="text-purple-600 font-semibold hover:text-purple-800 transition-colors">
+                                    View Details →
+                                </a>
+                            </div>
                         </div>
-                        <div class="project-tags">
-                            <span class="tag">Tableau</span>
-                            <span class="tag">Power BI</span>
-                            <span class="tag">Analytics</span>
+
+                        <div class="project-card" data-category="personal">
+                            <div class="bg-gradient-to-r from-orange-500 to-red-600 p-6 text-white">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="text-xl font-bold">📊 Time Series Forecasting & Anomaly Detection</h3>
+                                    <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Personal</span>
+                                </div>
+                                <p class="text-orange-100 mb-4">ARIMA, Prophet, and LSTM-based forecasting with anomaly detection</p>
+                                <div class="bg-white/10 rounded-lg p-4">
+                                    <strong>Impact:</strong> 91% forecast accuracy, 48-hour advance anomaly detection
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">ARIMA</span>
+                                    <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">LSTM</span>
+                                    <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">Prophet</span>
+                                </div>
+                                <a href="https://github.com/abhinavrana3027-ai" class="text-orange-600 font-semibold hover:text-orange-800 transition-colors">
+                                    View Details →
+                                </a>
+                            </div>
                         </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
-                </div>
-            </div>
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>🎯 Pricing Optimization ML Model</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Built a machine learning model to optimize dynamic pricing strategies using customer segmentation and price elasticity analysis.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Increased revenue by 18% through personalized pricing recommendations for high-value customer segments.
+
+                        <div class="project-card" data-category="personal">
+                            <div class="bg-gradient-to-r from-indigo-500 to-blue-600 p-6 text-white">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="text-xl font-bold">🔗 Recommendation Engine & Collaborative Filtering</h3>
+                                    <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Personal</span>
+                                </div>
+                                <p class="text-indigo-100 mb-4">Collaborative filtering and content-based recommendation systems</p>
+                                <div class="bg-white/10 rounded-lg p-4">
+                                    <strong>Impact:</strong> 38% CTR increase, 44% conversion improvement, 15% incremental revenue
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Collaborative Filtering</span>
+                                    <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Embeddings</span>
+                                    <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Recommendation Systems</span>
+                                </div>
+                                <a href="https://github.com/abhinavrana3027-ai" class="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors">
+                                    View Details →
+                                </a>
+                            </div>
                         </div>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Scikit-learn</span>
-                            <span class="tag">Pricing Strategy</span>
+
+                        <div class="project-card" data-category="personal">
+                            <div class="bg-gradient-to-r from-teal-500 to-green-600 p-6 text-white">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="text-xl font-bold">🤖 Computer Vision Image Classification</h3>
+                                    <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Personal</span>
+                                </div>
+                                <p class="text-teal-100 mb-4">CNN architectures with transfer learning for image classification</p>
+                                <div class="bg-white/10 rounded-lg p-4">
+                                    <strong>Impact:</strong> 96% accuracy, 50K+ images processed daily, 85% manual review reduction
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">Computer Vision</span>
+                                    <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">ResNet</span>
+                                    <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">Transfer Learning</span>
+                                </div>
+                                <a href="https://github.com/abhinavrana3027-ai" class="text-teal-600 font-semibold hover:text-teal-800 transition-colors">
+                                    View Details →
+                                </a>
+                            </div>
                         </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
+
+                        <div class="project-card" data-category="personal">
+                            <div class="bg-gradient-to-r from-cyan-500 to-blue-600 p-6 text-white">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="text-xl font-bold">📈 Causal Inference & Treatment Effect Analysis</h3>
+                                    <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Personal</span>
+                                </div>
+                                <p class="text-cyan-100 mb-4">Propensity score matching and causal forests for treatment effects</p>
+                                <div class="bg-white/10 rounded-lg p-4">
+                                    <strong>Impact:</strong> 35% estimation error correction, 28% higher marketing ROI
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-sm">Causal Inference</span>
+                                    <span class="bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-sm">Propensity Matching</span>
+                                    <span class="bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-sm">Statistical Modeling</span>
+                                </div>
+                                <a href="https://github.com/abhinavrana3027-ai" class="text-cyan-600 font-semibold hover:text-cyan-800 transition-colors">
+                                    View Details →
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-card" data-category="personal">
+                            <div class="bg-gradient-to-r from-pink-500 to-rose-600 p-6 text-white">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="text-xl font-bold">🧠 Unsupervised Learning & Dimensionality Reduction</h3>
+                                    <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Personal</span>
+                                </div>
+                                <p class="text-pink-100 mb-4">PCA, t-SNE, UMAP and clustering algorithms for pattern discovery</p>
+                                <div class="bg-white/10 rounded-lg p-4">
+                                    <strong>Impact:</strong> 75% dimensionality reduction, 12 hidden customer archetypes discovered
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm">PCA</span>
+                                    <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm">t-SNE</span>
+                                    <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm">Clustering</span>
+                                </div>
+                                <a href="https://github.com/abhinavrana3027-ai" class="text-pink-600 font-semibold hover:text-pink-800 transition-colors">
+                                    View Details →
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>🚚 Fleet Logistics Optimization</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Developed route optimization algorithms and workload-balancing systems for logistics fleet management using clustering and optimization techniques.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Reduced operational costs by 10%, improved delivery efficiency, and decreased driver complaints by 50%.
+                <!-- Academic Projects -->
+                <div class="category-section" data-category="academic">
+                    <h3 class="category-title">🎓 Master's Projects</h3>
+                    <p class="category-description">Academic research and capstone projects from GISMA Master's in Data Science, AI & Digital Business</p>
+                    <div class="project-grid">
+                        
+                        <div class="project-card" data-category="academic">
+                            <div class="bg-gradient-to-r from-indigo-500 to-blue-600 p-6 text-white">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="text-xl font-bold">💰 Pricing Optimization ML Model</h3>
+                                    <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Academic</span>
+                                </div>
+                                <p class="text-indigo-100 mb-4">Dynamic pricing strategies using customer segmentation</p>
+                                <div class="bg-white/10 rounded-lg p-4">
+                                    <strong>Impact:</strong> 18% revenue increase through personalized pricing recommendations
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Python</span>
+                                    <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Scikit-learn</span>
+                                    <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Pricing Strategy</span>
+                                </div>
+                                <a href="https://github.com/abhinavrana3027-ai" class="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors">
+                                    View Details →
+                                </a>
+                            </div>
                         </div>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">SQL</span>
-                            <span class="tag">Optimization</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>📉 Customer Churn Prediction</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Created predictive models to identify at-risk customers and recommend personalization strategies to reduce churn and improve retention.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Achieved 85% prediction accuracy, enabling targeted retention campaigns with 30% higher effectiveness.
+                        <div class="project-card" data-category="academic">
+                            <div class="bg-gradient-to-r from-teal-500 to-green-600 p-6 text-white">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="text-xl font-bold">🚚 Fleet Logistics Optimization</h3>
+                                    <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Academic</span>
+                                </div>
+                                <p class="text-teal-100 mb-4">Route optimization and workload-balancing systems</p>
+                                <div class="bg-white/10 rounded-lg p-4">
+                                    <strong>Impact:</strong> 10% cost reduction, 50% fewer driver complaints
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">Python</span>
+                                    <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">SQL</span>
+                                    <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">Optimization</span>
+                                </div>
+                                <a href="https://github.com/abhinavrana3027-ai" class="text-teal-600 font-semibold hover:text-teal-800 transition-colors">
+                                    View Details →
+                                </a>
+                            </div>
                         </div>
-                        <div class="project-tags">
-                            <span class="tag">Machine Learning</span>
-                            <span class="tag">Classification</span>
-                            <span class="tag">Retention</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>📊 A/B Testing Framework</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Architected comprehensive A/B testing framework with statistical rigor, designed experimentation workflows for enterprise clients, and built visualization dashboards.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Enabled 240% higher CTR and 35% lift in conversion rates across campaigns through data-driven optimization.
+                        <div class="project-card" data-category="academic">
+                            <div class="bg-gradient-to-r from-purple-500 to-pink-600 p-6 text-white">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="text-xl font-bold">📉 Customer Churn Prediction</h3>
+                                    <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Academic</span>
+                                </div>
+                                <p class="text-purple-100 mb-4">Predictive models to identify at-risk customers</p>
+                                <div class="bg-white/10 rounded-lg p-4">
+                                    <strong>Impact:</strong> 85% prediction accuracy, 30% higher retention campaign effectiveness
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Machine Learning</span>
+                                    <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Classification</span>
+                                    <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Retention</span>
+                                </div>
+                                <a href="https://github.com/abhinavrana3027-ai" class="text-purple-600 font-semibold hover:text-purple-800 transition-colors">
+                                    View Details →
+                                </a>
+                            </div>
                         </div>
-                        <div class="project-tags">
-                            <span class="tag">Statistics</span>
-                            <span class="tag">Experimentation</span>
-                            <span class="tag">Analytics</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>🏢 Berlin Business Survival ML</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Applied survival analysis and predictive modeling to predict business longevity, identify risk factors, and forecast company success rates in Berlin market.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Built predictive model with 82% accuracy for identifying sustainable vs. at-risk businesses in German startup ecosystem.
+                        <div class="project-card" data-category="academic">
+                            <div class="bg-gradient-to-r from-orange-500 to-red-600 p-6 text-white">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="text-xl font-bold">📊 A/B Testing Framework</h3>
+                                    <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Academic</span>
+                                </div>
+                                <p class="text-orange-100 mb-4">Comprehensive A/B testing framework with statistical rigor</p>
+                                <div class="bg-white/10 rounded-lg p-4">
+                                    <strong>Impact:</strong> 240% higher CTR, 35% conversion lift through data-driven optimization
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">Statistics</span>
+                                    <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">Experimentation</span>
+                                    <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">Analytics</span>
+                                </div>
+                                <a href="https://github.com/abhinavrana3027-ai" class="text-orange-600 font-semibold hover:text-orange-800 transition-colors">
+                                    View Details →
+                                </a>
+                            </div>
                         </div>
-                        <div class="project-tags">
-                            <span class="tag">Survival Analysis</span>
-                            <span class="tag">Forecasting</span>
-                            <span class="tag">Berlin Data</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>📈 Analytics Dashboard Suite</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Built interactive full-funnel analytics dashboards tracking user acquisition, engagement, retention, and monetization metrics across multiple platforms.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Provided real-time insights to 50+ stakeholders, reducing reporting time by 30% and improving decision velocity.
+                        <div class="project-card" data-category="academic">
+                            <div class="bg-gradient-to-r from-indigo-500 to-blue-600 p-6 text-white">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="text-xl font-bold">🏢 Berlin Business Survival ML</h3>
+                                    <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Academic</span>
+                                </div>
+                                <p class="text-indigo-100 mb-4">Survival analysis to predict business longevity in Berlin market</p>
+                                <div class="bg-white/10 rounded-lg p-4">
+                                    <strong>Impact:</strong> 82% accuracy for identifying sustainable vs. at-risk businesses
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Survival Analysis</span>
+                                    <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Forecasting</span>
+                                    <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Berlin Data</span>
+                                </div>
+                                <a href="https://github.com/abhinavrana3027-ai" class="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors">
+                                    View Details →
+                                </a>
+                            </div>
                         </div>
-                        <div class="project-tags">
-                            <span class="tag">Tableau</span>
-                            <span class="tag">Power BI</span>
-                            <span class="tag">Analytics</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>🎯 AutoZone PCIQ Campaign Analysis</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Owned full-funnel analytics for AutoZone's PCIQ module, conducting deep-dive cohort analysis to identify conversion bottlenecks and optimize user journey across web and mobile.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> 240% higher CTR on PCIQ module, 40% improvement in install-to-trial conversion, and identified 70% of user drop-off points for remediation.
+                        <div class="project-card" data-category="academic">
+                            <div class="bg-gradient-to-r from-teal-500 to-green-600 p-6 text-white">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="text-xl font-bold">📈 Analytics Dashboard Suite</h3>
+                                    <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Academic</span>
+                                </div>
+                                <p class="text-teal-100 mb-4">Interactive full-funnel analytics dashboards tracking user metrics</p>
+                                <div class="bg-white/10 rounded-lg p-4">
+                                    <strong>Impact:</strong> Real-time insights to 50+ stakeholders, 30% reporting time reduction
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">Tableau</span>
+                                    <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">Power BI</span>
+                                    <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">Analytics</span>
+                                </div>
+                                <a href="https://github.com/abhinavrana3027-ai" class="text-teal-600 font-semibold hover:text-teal-800 transition-colors">
+                                    View Details →
+                                </a>
+                            </div>
                         </div>
-                        <div class="project-tags">
-                            <span class="tag">Tableau</span>
-                            <span class="tag">SQL</span>
-                            <span class="tag">Cohort Analysis</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>🏨 JW Marriott Customer Segmentation</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Developed customer segmentation model for JW Marriott using behavioral and demographic clustering to create personalized marketing campaigns and loyalty strategies.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Identified 8 distinct customer personas, enabling targeted campaigns with 28% higher engagement and 22% revenue lift from high-value segments.
-                        </div>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Clustering</span>
-                            <span class="tag">Marketing Strategy</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>📱 Blinkist Meta Ads Optimization</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Integrated Meta Ads data with Appsflyer and Snowflake to build comprehensive attribution model, optimizing ad spend allocation across campaigns and audience segments.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Reduced customer acquisition cost by 25%, improved ROAS by 35%, and streamlined real-time reporting for weekly optimization cycles.
-                        </div>
-                        <div class="project-tags">
-                            <span class="tag">Meta Ads API</span>
-                            <span class="tag">Snowflake</span>
-                            <span class="tag">Attribution Modeling</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>☕ Dunkin Donuts Retention Analysis</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Built retention cohort analysis and churn prediction model for Dunkin Donuts loyalty program, identifying at-risk customers and recommending intervention strategies.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Achieved 32% improvement in 12-month retention, prevented churn of 15,000+ high-value customers, generating $2.3M incremental revenue.
-                        </div>
-                        <div class="project-tags">
-                            <span class="tag">Cohort Analysis</span>
-                            <span class="tag">Churn Prediction</span>
-                            <span class="tag">Looker</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>🛠️ Ace Hardware Go-to-Market Analysis</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Conducted comprehensive GTM strategy analysis for Ace Hardware, including competitive benchmarking, market sizing, and customer acquisition cost modeling across channels.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Developed data-backed GTM roadmap resulting in 18% market share growth and $5.2M in incremental campaign revenue in first year.
-                        </div>
-                        <div class="project-tags">
-                            <span class="tag">Market Analysis</span>
-                            <span class="tag">Competitive Intelligence</span>
-                            <span class="tag">Excel</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>🌍 Ferrum Southern India Market Entry</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Architected comprehensive Go-to-Market strategy for Ferrum's Southern Indian market expansion, including market sizing, gap analysis, competitor benchmarking, and pricing strategy.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Delivered data-driven GTM roadmap achieving 10% market share in 18 months, 30% higher conversion rate vs. benchmark, and $3.8M in first-year revenue.
-                        </div>
-                        <div class="project-tags">
-                            <span class="tag">GTM Strategy</span>
-                            <span class="tag">Market Sizing</span>
-                            <span class="tag">Pricing Analysis</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>📊 Sonic Driver Performance Intelligence</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Built real-time KPI dashboards and predictive models tracking driver performance metrics including stops per hour, fuel efficiency, delivery accuracy, and safety compliance.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Improved fleet utilization by 22%, reduced fuel costs by 10%, decreased safety incidents by 18%, and enabled data-driven driver coaching programs.
-                        </div>
-                        <div class="project-tags">
-                            <span class="tag">Power BI</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">Performance Analytics</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>🤖 Automated Reporting Automation Suite</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Developed Python-based automation suite for weekly and monthly performance reporting, eliminating manual data pulls and reducing reporting preparation time from 8 hours to 30 minutes.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Saved 300+ hours annually across team, improved data accuracy by 99.8%, and freed up time for strategic analysis and insights generation.
-                        </div>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">SQL</span>
-                            <span class="tag">Automation</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>🎓 Advanced NLP Text Classification</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Built end-to-end natural language processing pipeline for multi-class text classification using BERT embeddings, transformer models, and deep learning architectures for sentiment analysis and document categorization.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Achieved 94% F1-score on test set, deployed model processing 100K+ texts daily, enabling automated content moderation and customer feedback categorization.
-                        </div>
-                        <div class="project-tags">
-                            <span class="tag">NLP</span>
-                            <span class="tag">BERT</span>
-                            <span class="tag">Deep Learning</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>📊 Time Series Forecasting & Anomaly Detection</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Developed ARIMA, Prophet, and LSTM-based forecasting models for time series prediction with anomaly detection algorithms for identifying unusual patterns in business metrics and operational KPIs.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Achieved 91% forecast accuracy, detected operational anomalies 48 hours in advance, enabling proactive risk mitigation and prevented $500K+ in potential losses.
-                        </div>
-                        <div class="project-tags">
-                            <span class="tag">ARIMA</span>
-                            <span class="tag">LSTM</span>
-                            <span class="tag">Prophet</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>🔗 Recommendation Engine & Collaborative Filtering</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Built collaborative filtering and content-based recommendation systems using matrix factorization, embedding techniques, and hybrid approaches to personalize product recommendations.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Increased click-through rate by 38%, improved conversion on recommended items by 44%, and generated 15% incremental revenue through personalization at scale.
-                        </div>
-                        <div class="project-tags">
-                            <span class="tag">Collaborative Filtering</span>
-                            <span class="tag">Embeddings</span>
-                            <span class="tag">Recommendation Systems</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>🤖 Computer Vision Image Classification</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Implemented CNN architectures (ResNet, VGG, InceptionV3) with transfer learning for image classification, object detection, and visual quality assessment in real-world applications.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Built production model with 96% accuracy, processed 50K+ images daily, automated quality control reducing manual review time by 85% and improving consistency.
-                        </div>
-                        <div class="project-tags">
-                            <span class="tag">Computer Vision</span>
-                            <span class="tag">ResNet</span>
-                            <span class="tag">Transfer Learning</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>📈 Causal Inference & Treatment Effect Analysis</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Applied causal inference methodologies including propensity score matching, instrumental variables, and causal forests to estimate treatment effects and measure true business impact beyond correlation.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Identified true causality in campaign effectiveness, corrected estimation errors by 35%, and improved budget allocation decisions resulting in 28% higher ROI on marketing spend.
-                        </div>
-                        <div class="project-tags">
-                            <span class="tag">Causal Inference</span>
-                            <span class="tag">Propensity Matching</span>
-                            <span class="tag">Statistical Modeling</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>🧠 Unsupervised Learning & Dimensionality Reduction</h3>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Implemented PCA, t-SNE, UMAP, and clustering algorithms (K-means, DBSCAN, Hierarchical) for exploratory data analysis, feature reduction, and pattern discovery in high-dimensional datasets.</p>
-                        <div class="project-impact">
-                            <strong>Impact:</strong> Reduced feature dimensionality by 75% while retaining 95% variance, discovered 12 hidden customer archetypes for targeted personalization, and improved model interpretability by 60%.
-                        </div>
-                        <div class="project-tags">
-                            <span class="tag">PCA</span>
-                            <span class="tag">t-SNE</span>
-                            <span class="tag">Clustering</span>
-                        </div>
-                        <a href="https://github.com/abhinavrana3027-ai" class="project-link">View on GitHub →</a>
                     </div>
                 </div>
             </div>
@@ -1431,103 +894,205 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <h2>Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Data &amp; Analytics</h3>
-                    <div class="skill-item">
-                        <span class="skill-name">SQL</span>
-                        <span class="skill-level">Expert</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Python (Pandas, NumPy)</span>
-                        <span class="skill-level">Advanced</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Snowflake</span>
-                        <span class="skill-level">Advanced</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Data Visualization</span>
-                        <span class="skill-level">Advanced</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">ETL/ELT</span>
-                        <span class="skill-level">Advanced</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Machine Learning</h3>
-                    <div class="skill-item">
-                        <span class="skill-name">Scikit-learn</span>
-                        <span class="skill-level">Advanced</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Predictive Modeling</span>
-                        <span class="skill-level">Advanced</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Customer Segmentation</span>
-                        <span class="skill-level">Expert</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Statistical Analysis</span>
-                        <span class="skill-level">Advanced</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">A/B Testing</span>
-                        <span class="skill-level">Expert</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>BI &amp; Tools</h3>
-                    <div class="skill-item">
-                        <span class="skill-name">Tableau</span>
-                        <span class="skill-level">Expert</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Power BI</span>
-                        <span class="skill-level">Advanced</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Looker</span>
-                        <span class="skill-level">Advanced</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Excel (Advanced)</span>
-                        <span class="skill-level">Expert</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Appsflyer Analytics</span>
-                        <span class="skill-level">Advanced</span>
+    <section id="skills" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 section-reveal">
+                <h2 class="text-4xl font-bold mb-4 gradient-text">Technical Skills</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive expertise across the data science and analytics stack
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Data & Analytics -->
+                <div class="section-reveal">
+                    <div class="bg-blue-50 p-6 rounded-xl">
+                        <h3 class="text-xl font-semibold mb-6 text-blue-800 flex items-center">
+                            <i class="fas fa-database mr-3"></i>
+                            Data & Analytics
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-700">SQL</span>
+                                    <span class="text-gray-500">Expert</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-700">Python (Pandas, NumPy)</span>
+                                    <span class="text-gray-500">Advanced</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-700">Snowflake</span>
+                                    <span class="text-gray-500">Advanced</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-700">Data Visualization</span>
+                                    <span class="text-gray-500">Advanced</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 88%"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="skill-category">
-                    <h3>Business &amp; Strategy</h3>
-                    <div class="skill-item">
-                        <span class="skill-name">Go-to-Market Strategy</span>
-                        <span class="skill-level">Advanced</span>
+                <!-- Machine Learning -->
+                <div class="section-reveal">
+                    <div class="bg-green-50 p-6 rounded-xl">
+                        <h3 class="text-xl font-semibold mb-6 text-green-800 flex items-center">
+                            <i class="fas fa-brain mr-3"></i>
+                            Machine Learning
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-700">Scikit-learn</span>
+                                    <span class="text-gray-500">Advanced</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 88%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-700">Predictive Modeling</span>
+                                    <span class="text-gray-500">Advanced</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-700">Customer Segmentation</span>
+                                    <span class="text-gray-500">Expert</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 92%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-700">A/B Testing</span>
+                                    <span class="text-gray-500">Expert</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 95%"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Marketing Analytics</span>
-                        <span class="skill-level">Expert</span>
+                </div>
+
+                <!-- BI & Tools -->
+                <div class="section-reveal">
+                    <div class="bg-purple-50 p-6 rounded-xl">
+                        <h3 class="text-xl font-semibold mb-6 text-purple-800 flex items-center">
+                            <i class="fas fa-chart-bar mr-3"></i>
+                            BI & Tools
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-700">Tableau</span>
+                                    <span class="text-gray-500">Expert</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-700">Power BI</span>
+                                    <span class="text-gray-500">Advanced</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-700">Looker</span>
+                                    <span class="text-gray-500">Advanced</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-700">Excel (Advanced)</span>
+                                    <span class="text-gray-500">Expert</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 95%"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Stakeholder Management</span>
-                        <span class="skill-level">Advanced</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Project Coordination</span>
-                        <span class="skill-level">Advanced</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Data Storytelling</span>
-                        <span class="skill-level">Expert</span>
+                </div>
+
+                <!-- Business & Strategy -->
+                <div class="section-reveal">
+                    <div class="bg-orange-50 p-6 rounded-xl">
+                        <h3 class="text-xl font-semibold mb-6 text-orange-800 flex items-center">
+                            <i class="fas fa-lightbulb mr-3"></i>
+                            Business & Strategy
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-700">Go-to-Market Strategy</span>
+                                    <span class="text-gray-500">Advanced</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-700">Marketing Analytics</span>
+                                    <span class="text-gray-500">Expert</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 92%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-700">Stakeholder Management</span>
+                                    <span class="text-gray-500">Advanced</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 88%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-700">Data Storytelling</span>
+                                    <span class="text-gray-500">Expert</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 95%"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1535,72 +1100,157 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience">
-        <div class="container">
-            <h2>Work Experience</h2>
-            <div class="timeline">                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h3>Data Analyst</h3>
-                            <div class="date">Sonic GMBH, Berlin | Feb 2025 – Present</div>
-                            <p><strong>Fleet Logistics Optimization &amp; Performance Analytics:</strong> Optimizing fleet logistics and driver workload through Python-driven route planning and predictive analytics. Built KPI dashboards tracking operational efficiency, implemented automation reducing time-per-package by 15%, and developed workload-balancing algorithms improving driver satisfaction by 50%. Projects: Driver Performance Intelligence, Route Optimization ML, Automated Reporting Suite.</p>
+    <section id="experience" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 section-reveal">
+                <h2 class="text-4xl font-bold mb-4 gradient-text">Work Experience</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Professional journey across enterprise analytics and data science
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="timeline-item section-reveal">
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <h3 class="text-2xl font-bold text-gray-800">Data Analyst</h3>
+                            <span class="text-blue-600 font-semibold">Feb 2025 – Present</span>
+                        </div>
+                        <div class="text-gray-600 mb-4">
+                            <strong>Sonic GMBH, Berlin</strong>
+                        </div>
+                        <p class="text-gray-700 mb-4 leading-relaxed">
+                            <strong>Fleet Logistics Optimization & Performance Analytics:</strong> Optimizing fleet logistics and driver workload through Python-driven route planning and predictive analytics. Built KPI dashboards tracking operational efficiency, implemented automation reducing time-per-package by 15%, and developed workload-balancing algorithms improving driver satisfaction by 50%.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Python</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Power BI</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Route Optimization</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Performance Analytics</span>
                         </div>
                     </div>
+                </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h3>Campaign Analyst</h3>
-                            <div class="date">Epsilon | Oct 2021 – Jan 2024</div>
-                            <p><strong>Enterprise Campaign Analytics &amp; Attribution Modeling:</strong> Analytical owner for enterprise accounts including AutoZone, Blinkist, JW Marriott, Dunkin Donuts, and Ace Hardware. Designed A/B testing frameworks achieving 240% higher CTR and 35% lift in conversion rates. Conducted full-funnel analysis reducing user drop-off by 70% and integrated Meta Ads &amp; Appsflyer data across Snowflake dashboards. Key Projects: AutoZone PCIQ Campaign Analysis, JW Marriott Customer Segmentation, Blinkist Meta Ads Optimization, Dunkin Donuts Retention Analysis, Ace Hardware GTM Analysis.</p>
+                <div class="timeline-item section-reveal">
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <h3 class="text-2xl font-bold text-gray-800">Campaign Analyst</h3>
+                            <span class="text-blue-600 font-semibold">Oct 2021 – Jan 2024</span>
+                        </div>
+                        <div class="text-gray-600 mb-4">
+                            <strong>Epsilon</strong>
+                        </div>
+                        <p class="text-gray-700 mb-4 leading-relaxed">
+                            <strong>Enterprise Campaign Analytics & Attribution Modeling:</strong> Analytical owner for enterprise accounts including AutoZone, Blinkist, JW Marriott, Dunkin Donuts, and Ace Hardware. Designed A/B testing frameworks achieving 240% higher CTR and 35% lift in conversion rates. Conducted full-funnel analysis reducing user drop-off by 70% and integrated Meta Ads & Appsflyer data across Snowflake dashboards.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Tableau</span>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">SQL</span>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">A/B Testing</span>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Attribution Modeling</span>
                         </div>
                     </div>
+                </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h3>Marketing Analyst</h3>
-                            <div class="date">Ferrum PVT LTD | June 2020 – Sept 2021</div>
-                            <p><strong>Go-to-Market Strategy &amp; Market Analysis:</strong> Architected comprehensive Go-to-Market strategy for Southern Indian market entry through market sizing, gap analysis, and competitor benchmarking. Drove 30% conversion rate improvement and captured 10% market share in 18 months through data-driven positioning and customer segmentation strategies. Built pricing models, competitive intelligence dashboards, and market entry roadmaps.</p>
+                <div class="timeline-item section-reveal">
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <h3 class="text-2xl font-bold text-gray-800">Marketing Analyst</h3>
+                            <span class="text-blue-600 font-semibold">June 2020 – Sept 2021</span>
+                        </div>
+                        <div class="text-gray-600 mb-4">
+                            <strong>Ferrum PVT LTD</strong>
+                        </div>
+                        <p class="text-gray-700 mb-4 leading-relaxed">
+                            <strong>Go-to-Market Strategy & Market Analysis:</strong> Architected comprehensive Go-to-Market strategy for Southern Indian market entry through market sizing, gap analysis, and competitor benchmarking. Drove 30% conversion rate improvement and captured 10% market share in 18 months through data-driven positioning and customer segmentation strategies.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">GTM Strategy</span>
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Market Analysis</span>
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Competitive Intelligence</span>
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Pricing Analysis</span>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2>Let&rsquo;s Connect</h2>
-            <p>I&rsquo;m always interested in discussing data science, machine learning, and analytics opportunities in Berlin and beyond.</p>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <h3>📧 Email</h3>
-                    <a href="mailto:abhinavrana1407@gmail.com">abhinavrana1407@gmail.com</a>
+    <section id="contact" class="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 section-reveal">
+                <h2 class="text-4xl font-bold mb-4">Let's Connect</h2>
+                <p class="text-xl text-blue-100 max-w-3xl mx-auto">
+                    Ready to discuss data science, machine learning, and analytics opportunities
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="text-center section-reveal">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+                        <i class="fas fa-envelope text-4xl mb-4 text-yellow-300"></i>
+                        <h3 class="text-xl font-semibold mb-2">Email</h3>
+                        <a href="mailto:abhinavrana1407@gmail.com" class="text-blue-100 hover:text-white transition-colors">
+                            abhinavrana1407@gmail.com
+                        </a>
+                    </div>
                 </div>
-                <div class="contact-item">
-                    <h3>📍 Location</h3>
-                    <a href="#">Berlin, Germany</a>
+                
+                <div class="text-center section-reveal">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+                        <i class="fas fa-map-marker-alt text-4xl mb-4 text-yellow-300"></i>
+                        <h3 class="text-xl font-semibold mb-2">Location</h3>
+                        <p class="text-blue-100">Berlin, Germany</p>
+                        <p class="text-sm text-blue-200">Available for immediate start</p>
+                    </div>
                 </div>
-                <div class="contact-item">
-                    <h3>💼 LinkedIn</h3>
-                    <a href="https://www.linkedin.com/in/abhinav-rana-670707164/" target="_blank">Connect with me</a>
+                
+                <div class="text-center section-reveal">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+                        <i class="fab fa-linkedin text-4xl mb-4 text-yellow-300"></i>
+                        <h3 class="text-xl font-semibold mb-2">LinkedIn</h3>
+                        <a href="https://www.linkedin.com/in/abhinav-rana-670707164/" target="_blank" class="text-blue-100 hover:text-white transition-colors">
+                            Connect with me
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="social-links">
-                <a href="https://github.com/abhinavrana3027-ai" class="social-link" target="_blank">GitHub</a>
-                <a href="https://www.linkedin.com/in/abhinav-rana-670707164/" class="social-link" target="_blank">LinkedIn</a>
-                <a href="mailto:abhinavrana1407@gmail.com" class="social-link">Email</a>
+            
+            <div class="text-center section-reveal">
+                <div class="flex justify-center space-x-6">
+                    <a href="https://github.com/abhinavrana3027-ai" target="_blank" class="bg-white/10 backdrop-blur-sm w-16 h-16 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/abhinav-rana-670707164/" target="_blank" class="bg-white/10 backdrop-blur-sm w-16 h-16 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
+                    <a href="mailto:abhinavrana1407@gmail.com" class="bg-white/10 backdrop-blur-sm w-16 h-16 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
+                        <i class="fas fa-envelope text-2xl"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Abhinav Rana. All rights reserved. | Data Scientist &amp; ML Engineer | Berlin, Germany</p>
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400">
+                © 2025 Abhinav Rana. All rights reserved. | Data Scientist & ML Engineer | Berlin, Germany
+            </p>
+        </div>
     </footer>
 
     <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1611,11 +1261,13 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
                 }
             });
         });
 
-        // Intersection Observer for fade-in animations
+        // Intersection Observer for animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -100px 0px'
@@ -1624,14 +1276,118 @@
         const observer = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
+                    entry.target.classList.add('revealed');
                     observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
 
-        document.querySelectorAll('.project-card, .skill-category, .timeline-item').forEach(el => {
+        document.querySelectorAll('.section-reveal').forEach(el => {
             observer.observe(el);
+        });
+
+        // Counter animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stats-counter');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-count'));
+                const increment = target / 100;
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = target + (target === 50 ? 'M+' : '+');
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.floor(current);
+                    }
+                }, 20);
+            });
+        }
+
+        // Start counter animation when hero section is visible
+        const heroObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    heroObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        const heroSection = document.querySelector('.hero-bg');
+        if (heroSection) {
+            heroObserver.observe(heroSection);
+        }
+
+        // Project filtering
+        const filterButtons = document.querySelectorAll('.project-filter');
+        const projectCards = document.querySelectorAll('.project-card');
+        const categorySections = document.querySelectorAll('.category-section');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+
+                const filter = button.getAttribute('data-filter');
+
+                if (filter === 'all') {
+                    // Show all category sections and their projects
+                    categorySections.forEach(section => {
+                        section.style.display = 'block';
+                        const cards = section.querySelectorAll('.project-card');
+                        cards.forEach(card => {
+                            card.style.display = 'block';
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        });
+                    });
+                } else {
+                    // Hide all category sections first
+                    categorySections.forEach(section => {
+                        section.style.display = 'none';
+                    });
+                    
+                    // Show only the selected category section
+                    const targetSection = document.querySelector(`[data-category="${filter}"]`);
+                    if (targetSection) {
+                        targetSection.style.display = 'block';
+                        const cards = targetSection.querySelectorAll('.project-card');
+                        cards.forEach(card => {
+                            card.style.display = 'block';
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        });
+                    }
+                }
+            });
+        });
+
+        // Skill bars animation
+        const skillObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const skillBars = entry.target.querySelectorAll('.skill-progress');
+                    skillBars.forEach(bar => {
+                        const width = bar.style.width;
+                        bar.style.width = '0%';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 200);
+                    });
+                    skillObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        document.querySelectorAll('.section-reveal').forEach(el => {
+            if (el.querySelector('.skill-progress')) {
+                skillObserver.observe(el);
+            }
         });
     </script>
 </body>
