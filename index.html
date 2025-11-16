@@ -1,177 +1,41 @@
 
-export type ProjectCategory = 'Work' | 'Personal' | 'Master\'s';
-
-export interface Project {
-    category: ProjectCategory;
-    title: string;
-    description: string;
-    impact: string;
-    tags: string[];
-    link: string;
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abhinav Rana - Data Scientist Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom scrollbar for a more refined look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #6366f1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4f46e5;
+        }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
 }
+</script>
+</head>
+  <body class="bg-slate-50 text-slate-700">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
 
-export const PROJECTS: Project[] = [
-    // Work Projects
-    {
-        category: 'Work',
-        title: 'AutoZone PCIQ Campaign Analysis',
-        description: 'Owned full-funnel analytics for AutoZone\'s PCIQ module, conducting deep-dive cohort analysis to identify conversion bottlenecks and optimize user journey.',
-        impact: '240% higher CTR, 40% improvement in install-to-trial conversion, and identified 70% of user drop-off points.',
-        tags: ['Tableau', 'SQL', 'Cohort Analysis'],
-        link: 'https://github.com/abhinavrana3027-ai'
-    },
-    {
-        category: 'Work',
-        title: 'JW Marriott Customer Segmentation',
-        description: 'Developed customer segmentation model using behavioral and demographic clustering to create personalized marketing campaigns.',
-        impact: 'Identified 8 distinct customer personas, enabling targeted campaigns with 28% higher engagement.',
-        tags: ['Python', 'Clustering', 'Marketing Strategy'],
-        link: 'https://github.com/abhinavrana3027-ai'
-    },
-    {
-        category: 'Work',
-        title: 'Blinkist Meta Ads Optimization',
-        description: 'Integrated Meta Ads data with Appsflyer and Snowflake to build a comprehensive attribution model, optimizing ad spend allocation.',
-        impact: 'Reduced customer acquisition cost by 25% and improved ROAS by 35%.',
-        tags: ['Meta Ads API', 'Snowflake', 'Attribution'],
-        link: 'https://github.com/abhinavrana3027-ai'
-    },
-    {
-        category: 'Work',
-        title: 'Dunkin Donuts Retention Analysis',
-        description: 'Built retention cohort analysis and churn prediction model for the loyalty program, identifying at-risk customers.',
-        impact: 'Achieved 32% improvement in 12-month retention, generating $2.3M incremental revenue.',
-        tags: ['Cohort Analysis', 'Churn Prediction', 'Looker'],
-        link: 'https://github.com/abhinavrana3027-ai'
-    },
-    // Personal Projects
-    {
-        category: 'Personal',
-        title: 'Advanced NLP Text Classification',
-        description: 'Built an end-to-end NLP pipeline for multi-class text classification using BERT embeddings and transformer models.',
-        impact: 'Achieved 94% F1-score on test set, deployed model processing 100K+ texts daily.',
-        tags: ['NLP', 'BERT', 'Deep Learning'],
-        link: 'https://github.com/abhinavrana3027-ai'
-    },
-    {
-        category: 'Personal',
-        title: 'Time Series Forecasting & Anomaly Detection',
-        description: 'Developed ARIMA, Prophet, and LSTM-based forecasting models with anomaly detection for business KPIs.',
-        impact: 'Achieved 91% forecast accuracy, detected anomalies 48 hours in advance, preventing $500K+ in potential losses.',
-        tags: ['ARIMA', 'LSTM', 'Prophet'],
-        link: 'https://github.com/abhinavrana3027-ai'
-    },
-    {
-        category: 'Personal',
-        title: 'Recommendation Engine',
-        description: 'Built collaborative filtering and content-based recommendation systems using matrix factorization and embedding techniques.',
-        impact: 'Increased CTR by 38% and improved conversion by 44% on recommended items.',
-        tags: ['Collaborative Filtering', 'Embeddings'],
-        link: 'https://github.com/abhinavrana3027-ai'
-    },
-    {
-        category: 'Personal',
-        title: 'Computer Vision Image Classification',
-        description: 'Implemented CNN architectures (ResNet, VGG) with transfer learning for image classification and object detection.',
-        impact: 'Built production model with 96% accuracy, automated quality control, reducing manual review time by 85%.',
-        tags: ['Computer Vision', 'ResNet', 'Transfer Learning'],
-        link: 'https://github.com/abhinavrana3027-ai'
-    },
-    // Master's Projects
-    {
-        category: 'Master\'s',
-        title: 'Pricing Optimization ML Model',
-        description: 'Built a machine learning model to optimize dynamic pricing strategies using customer segmentation and price elasticity analysis.',
-        impact: 'Increased revenue by 18% through personalized pricing recommendations.',
-        tags: ['Python', 'Scikit-learn', 'Pricing'],
-        link: 'https://github.com/abhinavrana3027-ai'
-    },
-    {
-        category: 'Master\'s',
-        title: 'Fleet Logistics Optimization',
-        description: 'Developed route optimization algorithms and workload-balancing systems for logistics fleet management.',
-        impact: 'Reduced operational costs by 10% and improved delivery efficiency.',
-        tags: ['Python', 'SQL', 'Optimization'],
-        link: 'https://github.com/abhinavrana3027-ai'
-    },
-    {
-        category: 'Master\'s',
-        title: 'Customer Churn Prediction',
-        description: 'Created predictive models to identify at-risk customers and recommend personalization strategies to reduce churn.',
-        impact: 'Achieved 85% prediction accuracy, enabling targeted retention campaigns.',
-        tags: ['Machine Learning', 'Classification', 'Retention'],
-        link: 'https://github.com/abhinavrana3027-ai'
-    },
-    {
-        category: 'Master\'s',
-        title: 'Berlin Business Survival ML',
-        description: 'Applied survival analysis and predictive modeling to predict business longevity and identify risk factors in the Berlin market.',
-        impact: 'Built a model with 82% accuracy for identifying sustainable vs. at-risk businesses.',
-        tags: ['Survival Analysis', 'Forecasting', 'Berlin Data'],
-        link: 'https://github.com/abhinavrana3027-ai'
-    },
-];
-
-export const SKILLS = [
-    {
-        category: 'Data & Analytics',
-        skills: [
-            { name: 'SQL', level: 'Expert' },
-            { name: 'Python (Pandas, NumPy)', level: 'Advanced' },
-            { name: 'Snowflake', level: 'Advanced' },
-            { name: 'Data Visualization', level: 'Advanced' },
-            { name: 'ETL/ELT', level: 'Advanced' },
-        ]
-    },
-    {
-        category: 'Machine Learning',
-        skills: [
-            { name: 'Scikit-learn', level: 'Advanced' },
-            { name: 'Predictive Modeling', level: 'Advanced' },
-            { name: 'Customer Segmentation', level: 'Expert' },
-            { name: 'Statistical Analysis', level: 'Advanced' },
-            { name: 'A/B Testing', level: 'Expert' },
-        ]
-    },
-    {
-        category: 'BI & Tools',
-        skills: [
-            { name: 'Tableau', level: 'Expert' },
-            { name: 'Power BI', level: 'Advanced' },
-            { name: 'Looker', level: 'Advanced' },
-            { name: 'Excel (Advanced)', level: 'Expert' },
-            { name: 'Appsflyer Analytics', level: 'Advanced' },
-        ]
-    },
-    {
-        category: 'Business & Strategy',
-        skills: [
-            { name: 'Go-to-Market Strategy', level: 'Advanced' },
-            { name: 'Marketing Analytics', level: 'Expert' },
-            { name: 'Stakeholder Management', level: 'Advanced' },
-            { name: 'Project Coordination', level: 'Advanced' },
-            { name: 'Data Storytelling', level: 'Expert' },
-        ]
-    }
-];
-
-export const EXPERIENCE = [
-    {
-        role: 'Data Analyst',
-        company: 'Sonic GMBH, Berlin',
-        date: 'Feb 2025 – Present',
-        description: 'Optimizing fleet logistics and driver workload through Python-driven route planning and predictive analytics. Built KPI dashboards tracking operational efficiency and implemented automation reducing time-per-package by 15%.'
-    },
-    {
-        role: 'Campaign Analyst',
-        company: 'Epsilon',
-        date: 'Oct 2021 – Jan 2024',
-        description: 'Analytical owner for enterprise accounts like AutoZone & JW Marriott. Designed A/B testing frameworks achieving 240% higher CTR. Conducted full-funnel analysis reducing user drop-off by 70%.'
-    },
-    {
-        role: 'Marketing Analyst',
-        company: 'Ferrum PVT LTD',
-        date: 'June 2020 – Sept 2021',
-        description: 'Architected Go-to-Market strategy for Southern Indian market entry. Drove 30% conversion rate improvement and captured 10% market share in 18 months through data-driven positioning and customer segmentation.'
-    }
-];
