@@ -27,11 +27,6 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        .glass-dark {
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(10px);
-        }
-
         /* Animations */
         .reveal {
             opacity: 0;
@@ -44,7 +39,6 @@
             transform: translateY(0);
         }
 
-        /* Gradient Text */
         .text-gradient {
             background: linear-gradient(135deg, #2563eb, #7c3aed);
             -webkit-background-clip: text;
@@ -77,8 +71,7 @@
                         <a href="#about" class="hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
                         <a href="#experience" class="hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Experience</a>
                         <a href="#projects" class="hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Case Studies</a>
-                        <a href="#skills" class="hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Skills</a>
-                        <a href="#contact" class="bg-blue-600 text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-500/30">Let's Connect</a>
+                        <a href="#contact" class="bg-blue-600 text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-blue-700 transition-all shadow-lg">Let's Connect</a>
                     </div>
                 </div>
             </div>
@@ -144,27 +137,6 @@
         </div>
     </section>
 
-    <section id="about" class="py-24 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 reveal">
-                <h2 class="text-3xl font-bold text-slate-900 mb-4">More Than Just Code</h2>
-                <div class="w-20 h-1 bg-blue-600 mx-auto rounded-full"></div>
-            </div>
-            
-            <div class="prose prose-lg mx-auto text-slate-600 reveal">
-                <p class="mb-6">
-                    I am a <strong>Data Analyst for Enterprise-Scale CRM, Lifecycle & Marketing Analytics.</strong> My career has been defined by one mission: bridging the gap between "Tech" and "Business."
-                </p>
-                <p class="mb-6">
-                    My fascination with data began with the 2016 U.S. Election, watching how analytics shaped public perception. That curiosity led me to build a market-entry strategy from scratch at <strong>Ferrum Iron Ore</strong>, and later, to manage massive Fortune 500 datasets at <strong>Epsilon (Publicis Groupe)</strong>.
-                </p>
-                <p class="mb-6">
-                    Over time, I evolved into the <strong>“Translator”</strong>—the person who turns messy, complex data (SQL, Snowflake, Python) into the strategic lifecycle insights leaders need to make decisions. Whether it's diagnosing a funnel leak for <strong>AutoZone</strong> or optimizing logistics routes for <strong>Sonic GMBH</strong>, I focus on the metric that matters most: <strong>Impact.</strong>
-                </p>
-            </div>
-        </div>
-    </section>
-
     <section id="experience" class="py-24 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 reveal">
@@ -180,17 +152,17 @@
                     <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
                         <div class="flex flex-col sm:flex-row justify-between mb-4">
                             <div>
-                                <h3 class="text-xl font-bold text-slate-900">Working Student - Data Analyst</h3>
+                                <h3 class="text-xl font-bold text-slate-900">Delivery Agent / Data Analyst (Working Student)</h3>
                                 <p class="text-blue-600 font-semibold">Sonic GMBH (DPD Partner)</p>
                             </div>
                             <span class="text-slate-400 text-sm font-medium mt-1 sm:mt-0">Berlin | Sep 2024 - Present</span>
                         </div>
                         <p class="text-slate-600 mb-4">
-                            Proactively applying Master's level Data Science skills to fix real-world operational bottlenecks in last-mile logistics.
+                            While employed as a Delivery Agent to support my studies, I proactively partner with station management to solve operational bottlenecks using my data science toolkit.
                         </p>
                         <ul class="space-y-2 text-sm text-slate-700">
-                            <li class="flex gap-2"><i class="fas fa-check text-green-500 mt-1"></i> Built a <strong>Python "Fair Load" algorithm</strong> (Difficulty Score) to balance driver routes, reducing time-per-package by <strong>15%</strong>.</li>
-                            <li class="flex gap-2"><i class="fas fa-check text-green-500 mt-1"></i> Developed the company's first <strong>Tableau Dashboard</strong> to track fuel/km, reducing fleet costs by <strong>10%</strong>.</li>
+                            <li class="flex gap-2"><i class="fas fa-check text-green-500 mt-1"></i> <strong>Initiative:</strong> Volunteered to build a <strong>Python "Fair Load" algorithm</strong> (Difficulty Score) to balance driver routes, reducing average time-per-package by <strong>15%</strong>.</li>
+                            <li class="flex gap-2"><i class="fas fa-check text-green-500 mt-1"></i> <strong>Impact:</strong> Partnered with management to develop the company's first <strong>Tableau Dashboard</strong> for tracking fuel/km, identifying efficiencies that reduced fleet costs by <strong>10%</strong>.</li>
                         </ul>
                     </div>
                 </div>
@@ -205,8 +177,11 @@
                             </div>
                             <span class="text-slate-400 text-sm font-medium mt-1 sm:mt-0">India | Oct 2021 - Sep 2023</span>
                         </div>
-                        <p class="text-slate-600 mb-4">
-                            Client-Facing Data Strategist for Fortune 500 brands. Responsible for diagnosing funnel inefficiencies using SQL/Snowflake and designing revenue-generating A/B tests.
+                        <p class="text-slate-600 mb-4 text-sm leading-relaxed">
+                            <strong>The Enterprise Context:</strong> Epsilon is the data-tech powerhouse acquired by <strong>Publicis Groupe</strong> (one of the "Big 4" global advertising holding companies) to serve as the data engine for their entire network.
+                        </p>
+                        <p class="text-slate-600 mb-4 text-sm leading-relaxed">
+                            <strong>My Role:</strong> I acted as a Client-Facing Data Strategist, leveraging Epsilon's proprietary "PeopleCloud" identity platform to diagnose funnel inefficiencies and design revenue-generating A/B tests for the group's Fortune 500 clients.
                         </p>
                         <div class="flex flex-wrap gap-2 mt-4">
                             <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-semibold">AutoZone</span>
@@ -245,50 +220,47 @@
             <div class="text-center mb-16 reveal">
                 <h2 class="text-3xl font-bold text-slate-900 mb-4">Featured Case Studies</h2>
                 <p class="text-slate-600">Deep dives into my "Before & After" impact.</p>
+                
+                <div class="flex flex-wrap justify-center gap-4 mt-8">
+                    <button onclick="filterProjects('all')" class="px-4 py-2 rounded-full bg-slate-900 text-white text-sm font-medium hover:bg-slate-700 transition-all">All Projects</button>
+                    <button onclick="filterProjects('work')" class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 text-sm font-medium hover:bg-slate-200 transition-all">Work Projects</button>
+                    <button onclick="filterProjects('personal')" class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 text-sm font-medium hover:bg-slate-200 transition-all">Personal Projects</button>
+                </div>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projectsGrid">
                 
-                <div class="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-xl transition-all reveal">
+                <div class="project-card work group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-xl transition-all reveal">
                     <div class="h-48 bg-gradient-to-r from-orange-500 to-red-600 p-6 flex flex-col justify-end">
                         <h3 class="text-white text-2xl font-bold">AutoZone PCIQ</h3>
                         <p class="text-orange-100 text-sm">Predictive Customer Intelligence</p>
                     </div>
                     <div class="p-6">
                         <div class="flex gap-2 mb-4">
-                            <span class="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded">SQL</span>
                             <span class="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded">Snowflake</span>
                             <span class="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded">A/B Testing</span>
                         </div>
-                        <p class="text-slate-600 mb-6 text-sm">
-                            Addressed flat engagement rates by building a predictive module to identify product purchase pairings.
-                        </p>
-                        <button onclick="openModal('autozone')" class="w-full py-3 bg-slate-50 text-slate-700 font-semibold rounded-lg hover:bg-slate-100 transition-colors">
-                            View Impact Strategy <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
+                        <p class="text-slate-600 mb-6 text-sm">Addressed flat engagement rates by building a predictive module to identify product purchase pairings.</p>
+                        <button onclick="openModal('autozone')" class="w-full py-3 bg-slate-50 text-slate-700 font-semibold rounded-lg hover:bg-slate-100 transition-colors">View Impact <i class="fas fa-arrow-right ml-2"></i></button>
                     </div>
                 </div>
 
-                <div class="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-xl transition-all reveal" style="transition-delay: 100ms;">
+                <div class="project-card work group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-xl transition-all reveal">
                     <div class="h-48 bg-gradient-to-r from-blue-600 to-indigo-700 p-6 flex flex-col justify-end">
                         <h3 class="text-white text-2xl font-bold">SiriusXM Growth</h3>
                         <p class="text-blue-100 text-sm">CRM Segmentation Strategy</p>
                     </div>
                     <div class="p-6">
                         <div class="flex gap-2 mb-4">
-                            <span class="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded">Funnel Analysis</span>
                             <span class="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded">Strategy</span>
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded">Funnel Analysis</span>
                         </div>
-                        <p class="text-slate-600 mb-6 text-sm">
-                            Diagnosed platform inefficiencies and optimized targeting between iOS and Android cohorts.
-                        </p>
-                        <button onclick="openModal('sirius')" class="w-full py-3 bg-slate-50 text-slate-700 font-semibold rounded-lg hover:bg-slate-100 transition-colors">
-                            View Impact Strategy <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
+                        <p class="text-slate-600 mb-6 text-sm">Diagnosed platform inefficiencies and optimized targeting between iOS and Android cohorts.</p>
+                        <button onclick="openModal('sirius')" class="w-full py-3 bg-slate-50 text-slate-700 font-semibold rounded-lg hover:bg-slate-100 transition-colors">View Impact <i class="fas fa-arrow-right ml-2"></i></button>
                     </div>
                 </div>
 
-                <div class="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-xl transition-all reveal" style="transition-delay: 200ms;">
+                <div class="project-card work group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-xl transition-all reveal">
                     <div class="h-48 bg-gradient-to-r from-red-600 to-red-800 p-6 flex flex-col justify-end">
                         <h3 class="text-white text-2xl font-bold">Ace Hardware</h3>
                         <p class="text-red-100 text-sm">Market Basket Analysis</p>
@@ -298,16 +270,12 @@
                             <span class="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded">Python</span>
                             <span class="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded">Automation</span>
                         </div>
-                        <p class="text-slate-600 mb-6 text-sm">
-                            Automated cross-sell logic based on transaction correlation to drive average order value.
-                        </p>
-                        <button onclick="openModal('ace')" class="w-full py-3 bg-slate-50 text-slate-700 font-semibold rounded-lg hover:bg-slate-100 transition-colors">
-                            View Impact Strategy <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
+                        <p class="text-slate-600 mb-6 text-sm">Automated cross-sell logic based on transaction correlation to drive average order value.</p>
+                        <button onclick="openModal('ace')" class="w-full py-3 bg-slate-50 text-slate-700 font-semibold rounded-lg hover:bg-slate-100 transition-colors">View Impact <i class="fas fa-arrow-right ml-2"></i></button>
                     </div>
                 </div>
 
-                <div class="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-xl transition-all reveal">
+                <div class="project-card work group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-xl transition-all reveal">
                     <div class="h-48 bg-gradient-to-r from-slate-800 to-black p-6 flex flex-col justify-end">
                         <h3 class="text-white text-2xl font-bold">JW Marriott</h3>
                         <p class="text-slate-300 text-sm">Lifecycle Win-Back</p>
@@ -317,16 +285,12 @@
                             <span class="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded">Lifecycle</span>
                             <span class="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded">Segmentation</span>
                         </div>
-                        <p class="text-slate-600 mb-6 text-sm">
-                            Engineered hyper-personalized campaigns to reactivate lapsed "Elite" status members.
-                        </p>
-                        <button onclick="openModal('marriott')" class="w-full py-3 bg-slate-50 text-slate-700 font-semibold rounded-lg hover:bg-slate-100 transition-colors">
-                            View Impact Strategy <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
+                        <p class="text-slate-600 mb-6 text-sm">Engineered hyper-personalized campaigns to reactivate lapsed "Elite" status members.</p>
+                        <button onclick="openModal('marriott')" class="w-full py-3 bg-slate-50 text-slate-700 font-semibold rounded-lg hover:bg-slate-100 transition-colors">View Impact <i class="fas fa-arrow-right ml-2"></i></button>
                     </div>
                 </div>
 
-                <div class="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-xl transition-all reveal" style="transition-delay: 100ms;">
+                <div class="project-card work group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-xl transition-all reveal">
                     <div class="h-48 bg-gradient-to-r from-yellow-500 to-yellow-600 p-6 flex flex-col justify-end">
                         <h3 class="text-white text-2xl font-bold">Wells Fargo</h3>
                         <p class="text-yellow-100 text-sm">Behavioral Cross-Sell</p>
@@ -336,89 +300,131 @@
                             <span class="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded">Clustering</span>
                             <span class="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded">SQL</span>
                         </div>
-                        <p class="text-slate-600 mb-6 text-sm">
-                            Overhauled acquisition campaigns using behavioral clustering (Travelers vs. Diners).
-                        </p>
-                        <button onclick="openModal('wells')" class="w-full py-3 bg-slate-50 text-slate-700 font-semibold rounded-lg hover:bg-slate-100 transition-colors">
-                            View Impact Strategy <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
+                        <p class="text-slate-600 mb-6 text-sm">Overhauled acquisition campaigns using behavioral clustering (Travelers vs. Diners).</p>
+                        <button onclick="openModal('wells')" class="w-full py-3 bg-slate-50 text-slate-700 font-semibold rounded-lg hover:bg-slate-100 transition-colors">View Impact <i class="fas fa-arrow-right ml-2"></i></button>
                     </div>
                 </div>
 
-                 <div class="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-xl transition-all reveal" style="transition-delay: 200ms;">
-                    <div class="h-48 bg-gradient-to-r from-emerald-500 to-emerald-700 p-6 flex flex-col justify-end">
-                        <h3 class="text-white text-2xl font-bold">Telco Churn ML</h3>
-                        <p class="text-emerald-100 text-sm">MSc Data Science Project</p>
+                <div class="project-card personal group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-xl transition-all reveal">
+                    <div class="h-48 bg-gradient-to-r from-blue-700 to-cyan-500 p-6 flex flex-col justify-end">
+                        <h3 class="text-white text-2xl font-bold">IBM HR Analytics</h3>
+                        <p class="text-blue-100 text-sm">Employee Attrition Prediction</p>
                     </div>
                     <div class="p-6">
                         <div class="flex gap-2 mb-4">
-                            <span class="px-2 py-1 bg-green-50 text-green-700 text-xs font-bold rounded">XGBoost</span>
-                            <span class="px-2 py-1 bg-green-50 text-green-700 text-xs font-bold rounded">Python</span>
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded">XGBoost</span>
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded">SHAP</span>
                         </div>
-                        <p class="text-slate-600 mb-6 text-sm">
-                            Built an end-to-end ML pipeline to predict customer churn with 92% ROC-AUC.
-                        </p>
-                        <button onclick="openModal('churn')" class="w-full py-3 bg-slate-50 text-slate-700 font-semibold rounded-lg hover:bg-slate-100 transition-colors">
-                            View Technical Details <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
+                        <p class="text-slate-600 mb-6 text-sm">End-to-end ML analysis of 1,470 employee records to identify attrition drivers.</p>
+                        <button onclick="openModal('ibm')" class="w-full py-3 bg-slate-50 text-slate-700 font-semibold rounded-lg hover:bg-slate-100 transition-colors">View Details <i class="fas fa-arrow-right ml-2"></i></button>
                     </div>
                 </div>
 
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="py-24 bg-slate-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 reveal">
-                <h2 class="text-3xl font-bold mb-4">My Toolkit</h2>
-                <p class="text-slate-400">Bridging the gap between Code and Commercial Strategy.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="reveal">
-                    <h3 class="text-xl font-bold text-blue-400 mb-6 border-b border-slate-700 pb-2">Business & Strategy</h3>
-                    <ul class="space-y-4">
-                        <li class="flex justify-between items-center">
-                            <span>Marketing Analytics & ROI</span>
-                            <div class="w-32 h-2 bg-slate-700 rounded-full overflow-hidden"><div class="h-full bg-blue-500 w-[95%]"></div></div>
-                        </li>
-                        <li class="flex justify-between items-center">
-                            <span>A/B Testing & Experimentation</span>
-                            <div class="w-32 h-2 bg-slate-700 rounded-full overflow-hidden"><div class="h-full bg-blue-500 w-[90%]"></div></div>
-                        </li>
-                        <li class="flex justify-between items-center">
-                            <span>Stakeholder "Translation"</span>
-                            <div class="w-32 h-2 bg-slate-700 rounded-full overflow-hidden"><div class="h-full bg-blue-500 w-[95%]"></div></div>
-                        </li>
-                        <li class="flex justify-between items-center">
-                            <span>Tableau / Power BI Dashboarding</span>
-                            <div class="w-32 h-2 bg-slate-700 rounded-full overflow-hidden"><div class="h-full bg-blue-500 w-[85%]"></div></div>
-                        </li>
-                    </ul>
+                <div class="project-card personal group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-xl transition-all reveal">
+                    <div class="h-48 bg-gradient-to-r from-teal-500 to-green-600 p-6 flex flex-col justify-end">
+                        <h3 class="text-white text-2xl font-bold">1mg Medicine Data</h3>
+                        <p class="text-green-100 text-sm">Web Scraping & Dashboarding</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-4">
+                            <span class="px-2 py-1 bg-green-50 text-green-700 text-xs font-bold rounded">Python Scraping</span>
+                            <span class="px-2 py-1 bg-green-50 text-green-700 text-xs font-bold rounded">Streamlit</span>
+                        </div>
+                        <p class="text-slate-600 mb-6 text-sm">Engineered a complete web scraping pipeline and interactive dashboard for medicine pricing.</p>
+                        <button onclick="openModal('1mg')" class="w-full py-3 bg-slate-50 text-slate-700 font-semibold rounded-lg hover:bg-slate-100 transition-colors">View Details <i class="fas fa-arrow-right ml-2"></i></button>
+                    </div>
                 </div>
 
-                <div class="reveal">
-                    <h3 class="text-xl font-bold text-green-400 mb-6 border-b border-slate-700 pb-2">Technical Data Science</h3>
-                    <ul class="space-y-4">
-                        <li class="flex justify-between items-center">
-                            <span>SQL (Window Functions, CTEs)</span>
-                            <div class="w-32 h-2 bg-slate-700 rounded-full overflow-hidden"><div class="h-full bg-green-500 w-[95%]"></div></div>
-                        </li>
-                        <li class="flex justify-between items-center">
-                            <span>Python (Pandas, Scikit-Learn)</span>
-                            <div class="w-32 h-2 bg-slate-700 rounded-full overflow-hidden"><div class="h-full bg-green-500 w-[85%]"></div></div>
-                        </li>
-                        <li class="flex justify-between items-center">
-                            <span>Snowflake Cloud Data Warehouse</span>
-                            <div class="w-32 h-2 bg-slate-700 rounded-full overflow-hidden"><div class="h-full bg-green-500 w-[80%]"></div></div>
-                        </li>
-                        <li class="flex justify-between items-center">
-                            <span>Machine Learning (XGBoost, RF)</span>
-                            <div class="w-32 h-2 bg-slate-700 rounded-full overflow-hidden"><div class="h-full bg-green-500 w-[80%]"></div></div>
-                        </li>
-                    </ul>
+                <div class="project-card personal group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-xl transition-all reveal">
+                    <div class="h-48 bg-gradient-to-r from-purple-600 to-pink-600 p-6 flex flex-col justify-end">
+                        <h3 class="text-white text-2xl font-bold">Tech Demand Platform</h3>
+                        <p class="text-purple-100 text-sm">Real-Time Skills Analysis</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-4">
+                            <span class="px-2 py-1 bg-purple-50 text-purple-700 text-xs font-bold rounded">NLP</span>
+                            <span class="px-2 py-1 bg-purple-50 text-purple-700 text-xs font-bold rounded">FastAPI</span>
+                        </div>
+                        <p class="text-slate-600 mb-6 text-sm">Architected a full-stack system forecasting tech skills demand using BERT and ARIMA.</p>
+                        <button onclick="openModal('tech')" class="w-full py-3 bg-slate-50 text-slate-700 font-semibold rounded-lg hover:bg-slate-100 transition-colors">View Details <i class="fas fa-arrow-right ml-2"></i></button>
+                    </div>
                 </div>
+
+                <div class="project-card personal group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-xl transition-all reveal">
+                    <div class="h-48 bg-gradient-to-r from-blue-800 to-blue-500 p-6 flex flex-col justify-end">
+                        <h3 class="text-white text-2xl font-bold">BMW Price Prediction</h3>
+                        <p class="text-blue-100 text-sm">Premium Car Valuation</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded">XGBoost</span>
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded">Regression</span>
+                        </div>
+                        <p class="text-slate-600 mb-6 text-sm">ML model for used car valuation achieving 96% R² accuracy, reducing manual pricing time.</p>
+                        <button onclick="openModal('bmw')" class="w-full py-3 bg-slate-50 text-slate-700 font-semibold rounded-lg hover:bg-slate-100 transition-colors">View Details <i class="fas fa-arrow-right ml-2"></i></button>
+                    </div>
+                </div>
+
+                <div class="project-card personal group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-xl transition-all reveal">
+                    <div class="h-48 bg-gradient-to-r from-cyan-600 to-teal-500 p-6 flex flex-col justify-end">
+                        <h3 class="text-white text-2xl font-bold">Multi-Brand Valuation</h3>
+                        <p class="text-cyan-100 text-sm">Vehicle Pricing System</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-4">
+                            <span class="px-2 py-1 bg-cyan-50 text-cyan-700 text-xs font-bold rounded">Bayesian Opt.</span>
+                            <span class="px-2 py-1 bg-cyan-50 text-cyan-700 text-xs font-bold rounded">Ensemble</span>
+                        </div>
+                        <p class="text-slate-600 mb-6 text-sm">End-to-end ML pipeline analyzing 2,500+ vehicles with automated feature engineering.</p>
+                        <button onclick="openModal('cars')" class="w-full py-3 bg-slate-50 text-slate-700 font-semibold rounded-lg hover:bg-slate-100 transition-colors">View Details <i class="fas fa-arrow-right ml-2"></i></button>
+                    </div>
+                </div>
+
+                <div class="project-card personal group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-xl transition-all reveal">
+                    <div class="h-48 bg-gradient-to-r from-red-500 to-pink-600 p-6 flex flex-col justify-end">
+                        <h3 class="text-white text-2xl font-bold">Telco Churn</h3>
+                        <p class="text-red-100 text-sm">Retention Prediction</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-4">
+                            <span class="px-2 py-1 bg-red-50 text-red-700 text-xs font-bold rounded">CI/CD</span>
+                            <span class="px-2 py-1 bg-red-50 text-red-700 text-xs font-bold rounded">Classification</span>
+                        </div>
+                        <p class="text-slate-600 mb-6 text-sm">Architected production-ready ML pipeline for churn prediction with 92% ROC-AUC.</p>
+                        <button onclick="openModal('telco')" class="w-full py-3 bg-slate-50 text-slate-700 font-semibold rounded-lg hover:bg-slate-100 transition-colors">View Details <i class="fas fa-arrow-right ml-2"></i></button>
+                    </div>
+                </div>
+
+                <div class="project-card personal group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-xl transition-all reveal">
+                    <div class="h-48 bg-gradient-to-r from-orange-400 to-yellow-500 p-6 flex flex-col justify-end">
+                        <h3 class="text-white text-2xl font-bold">E-commerce Churn</h3>
+                        <p class="text-yellow-50 text-sm">Retail Retention Analytics</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-4">
+                            <span class="px-2 py-1 bg-yellow-50 text-yellow-700 text-xs font-bold rounded">Segmentation</span>
+                            <span class="px-2 py-1 bg-yellow-50 text-yellow-700 text-xs font-bold rounded">RFM</span>
+                        </div>
+                        <p class="text-slate-600 mb-6 text-sm">Comprehensive churn analysis pipeline enabling targeted retention campaigns.</p>
+                        <button onclick="openModal('ecom')" class="w-full py-3 bg-slate-50 text-slate-700 font-semibold rounded-lg hover:bg-slate-100 transition-colors">View Details <i class="fas fa-arrow-right ml-2"></i></button>
+                    </div>
+                </div>
+
+                <div class="project-card personal group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-xl transition-all reveal">
+                    <div class="h-48 bg-gradient-to-r from-emerald-600 to-emerald-400 p-6 flex flex-col justify-end">
+                        <h3 class="text-white text-2xl font-bold">Bank Campaign ML</h3>
+                        <p class="text-emerald-50 text-sm">Marketing Optimization</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-4">
+                            <span class="px-2 py-1 bg-emerald-50 text-emerald-700 text-xs font-bold rounded">Optimization</span>
+                            <span class="px-2 py-1 bg-emerald-50 text-emerald-700 text-xs font-bold rounded">Gradient Boosting</span>
+                        </div>
+                        <p class="text-slate-600 mb-6 text-sm">Analyzed 11,000+ contacts to identify optimal timing and segments, boosting ROI.</p>
+                        <button onclick="openModal('bank')" class="w-full py-3 bg-slate-50 text-slate-700 font-semibold rounded-lg hover:bg-slate-100 transition-colors">View Details <i class="fas fa-arrow-right ml-2"></i></button>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -435,6 +441,9 @@
                 </a>
                 <a href="https://www.linkedin.com/in/abhinav-rana-670707164/" target="_blank" class="px-8 py-4 bg-slate-100 text-slate-900 rounded-full font-bold hover:bg-slate-200 transition-all">
                     LinkedIn Profile
+                </a>
+                <a href="https://github.com/abhinavrana3027-ai" target="_blank" class="px-8 py-4 bg-slate-900 text-white rounded-full font-bold hover:bg-slate-800 transition-all">
+                    GitHub Profile
                 </a>
             </div>
         </div>
@@ -474,7 +483,7 @@
     </div>
 
     <script>
-        // Project Data (The Source of Truth)
+        // Project Data (Source of Truth)
         const projects = {
             autozone: {
                 title: "AutoZone PCIQ",
@@ -486,7 +495,7 @@
             },
             sirius: {
                 title: "SiriusXM Growth",
-                subtitle: "CRM Strategy & Platform Optimization",
+                subtitle: "CRM Segmentation Strategy",
                 color: "bg-gradient-to-r from-blue-600 to-indigo-700",
                 before: "The client was spending heavily on Push Notifications, but efficiency was dropping. 80% of the budget was targeting tenured users who had near-zero open rates, while high-intent new users were ignored.",
                 action: "I conducted a deep CRM diagnostic using <strong>SQL</strong>. My analysis revealed that <strong>iOS users converted 5x higher</strong> than Android users. I built a strategic roadmap to re-allocate budget toward high-LTV segments.",
@@ -494,7 +503,7 @@
             },
             ace: {
                 title: "Ace Hardware",
-                subtitle: "Market Basket Analysis & Automation",
+                subtitle: "Market Basket Analysis",
                 color: "bg-gradient-to-r from-red-600 to-red-800",
                 before: "The weekly promo email was static and manual. The Average Order Value (AOV) from email traffic was stagnant at $45, as customers were only buying single on-sale items.",
                 action: "I performed <strong>Market Basket Analysis</strong> in Snowflake to identify strong product correlations (e.g., Paint + Tape). I designed an automated 'Don't Forget' module logic for the email footer.",
@@ -516,15 +525,86 @@
                 action: "I moved from 'batch-and-blast' to behavioral segmentation. I used <strong>SQL</strong> to cluster users into 4 personas (Travelers, Diners, Commuters, Shoppers) and targeted them with specific card benefits.",
                 result: "This relevance-first strategy drove a <strong>60% uplift in application completions</strong> and a 15% increase in early card activation."
             },
-            churn: {
-                title: "Telco Churn Prediction",
-                subtitle: "End-to-End Machine Learning Pipeline",
-                color: "bg-gradient-to-r from-emerald-500 to-emerald-700",
-                before: "Academic Project: Telco companies face high customer churn but struggle to identify at-risk users early enough to intervene.",
-                action: "I built a full ML pipeline using <strong>Python (Scikit-Learn)</strong>. I handled class imbalance using SMOTE and trained an <strong>XGBoost</strong> classifier to predict churn probability.",
-                result: "Achieved <strong>92% ROC-AUC</strong> score. Deployed the model via a Streamlit app to demonstrate real-time prediction capabilities."
+            ibm: {
+                title: "IBM HR Analytics",
+                subtitle: "Employee Attrition Analysis",
+                color: "bg-gradient-to-r from-blue-700 to-cyan-500",
+                before: "The organization faced a 16.1% attrition rate with high turnover in Sales and HR. Without predictive capabilities, retention efforts were reactive and costly ($23.1M annual cost).",
+                action: "Led an end-to-end ML analysis of 1,470 employee records. Engineered 4 composite features (e.g., Promotion Stagnation) and implemented 7 ML algorithms with hyperparameter tuning. Used SMOTE for class imbalance and SHAP values for explainability.",
+                result: "Achieved <strong>88.1% accuracy with XGBoost</strong>. Identified top attrition drivers (Overtime, Income). Delivered data-driven recommendations with potential savings of <strong>$5.6M annually</strong>."
+            },
+            "1mg": {
+                title: "1mg Medicine Dataset",
+                subtitle: "Web Scraping & Dashboarding",
+                color: "bg-gradient-to-r from-teal-500 to-green-600",
+                before: "Healthcare pricing information was fragmented without a centralized dataset for analysis. Researchers lacked accessible data for comparative pricing trends.",
+                action: "Engineered a complete web scraping pipeline for 780+ medicines using Python. Built data quality assessment modules and created an interactive <strong>Streamlit dashboard</strong> with Plotly visualizations.",
+                result: "Created a clean, structured dataset and deployed a real-time exploration dashboard. Demonstrated full-stack data skills from ETL to deployment."
+            },
+            tech: {
+                title: "Tech Demand Dashboard",
+                subtitle: "Real-Time Skills Analytics",
+                color: "bg-gradient-to-r from-purple-600 to-pink-600",
+                before: "Hiring managers lacked real-time visibility into tech skills demand. Job seekers couldn't prioritize learning paths without data-driven insights.",
+                action: "Architected a full-stack system integrating 4 data sources (Stack Overflow, GitHub, etc.). Implemented forecasting models (Prophet, ARIMA, LightGBM) and NLP analysis (BERTopic). Built a FastAPI backend deployed via Docker.",
+                result: "Delivered a production platform with <strong>91% prediction accuracy</strong>. Automated insights pipeline reduced manual analysis from hours to seconds."
+            },
+            bmw: {
+                title: "BMW Price Prediction",
+                subtitle: "Premium Car Valuation",
+                color: "bg-gradient-to-r from-blue-800 to-blue-500",
+                before: "Used car dealers faced pricing uncertainty, leading to lost margins. Manual valuation was time-consuming (15 mins/car) and inconsistent.",
+                action: "Analyzed 4,844 records and engineered features like Price_per_HP. Implemented 7 regression algorithms. Used XGBoost for final modeling.",
+                result: "XGBoost achieved <strong>96% R² accuracy</strong>. Automated valuation reduced pricing time to 5 seconds. Identified premium feature value add of €1,200-€3,000."
+            },
+            cars: {
+                title: "Multi-Brand Valuation",
+                subtitle: "Vehicle Pricing System",
+                color: "bg-gradient-to-r from-cyan-600 to-teal-500",
+                before: "Platforms needed accurate multi-brand price predictions across diverse vehicle types. Manual pricing expertise varied widely.",
+                action: "Built an ML pipeline for 2,501 vehicles. Engineered 15+ features including Depreciation Rate. Implemented models with Bayesian optimization using Optuna.",
+                result: "XGBoost delivered <strong>96% R² accuracy</strong>. System processes 10,000+ valuations per hour, enabling scalable, consistent pricing."
+            },
+            telco: {
+                title: "Telco Customer Churn",
+                subtitle: "Retention Prediction Pipeline",
+                color: "bg-gradient-to-r from-red-500 to-pink-600",
+                before: "Telecommunications company faced high churn without predictive capabilities. Reactive retention efforts were too late and expensive.",
+                action: "Architected a production-ready ML pipeline for 7,044 customers. Engineered 10 domain features. Implemented CI/CD pipeline with GitHub Actions.",
+                result: "Delivered models achieving <strong>92% ROC-AUC</strong>. Identified key churn drivers enabling proactive retention strategies."
+            },
+            ecom: {
+                title: "E-commerce Churn",
+                subtitle: "Retail Retention Analytics",
+                color: "bg-gradient-to-r from-orange-400 to-yellow-500",
+                before: "E-commerce platform struggled with churn without understanding behavioral patterns. Retention budgets were spread inefficiently.",
+                action: "Built a churn analysis pipeline with engineered features (Recency, Frequency, Tenure). Implemented 7 ML algorithms with stratified splitting.",
+                result: "Delivered production-ready models for customer segmentation. Enabled targeted campaigns focusing on high-value, at-risk segments."
+            },
+            bank: {
+                title: "Bank Campaign Analysis",
+                subtitle: "Marketing Optimization",
+                color: "bg-gradient-to-r from-emerald-600 to-emerald-400",
+                before: "Bank campaigns had a baseline conversion of 47% but lacked optimization strategies. Over-contacting was reducing conversion.",
+                action: "Analyzed 11,000+ contacts. Implemented ML models (Gradient Boosting) achieving 0.93 ROC-AUC. Conducted feature importance analysis.",
+                result: "Identified high-value segments (Age 60+, Students). Discovered optimal timing (Q1/Q4). Delivered recommendations to potentially improve ROI by 91%."
             }
         };
+
+        // Filter Logic
+        function filterProjects(category) {
+            const allCards = document.querySelectorAll('.project-card');
+            
+            allCards.forEach(card => {
+                if (category === 'all') {
+                    card.style.display = 'block';
+                } else if (card.classList.contains(category)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
 
         // Modal Functions
         function openModal(projectId) {
@@ -532,10 +612,9 @@
             document.getElementById('mTitle').innerText = data.title;
             document.getElementById('mSubtitle').innerText = data.subtitle;
             document.getElementById('mBefore').innerText = data.before;
-            document.getElementById('mAction').innerHTML = data.action; // InnerHTML for bold tags
+            document.getElementById('mAction').innerHTML = data.action; 
             document.getElementById('mResult').innerHTML = data.result;
             
-            // Set header color
             const header = document.getElementById('modalHeader');
             header.className = `p-8 text-white relative ${data.color}`;
 
